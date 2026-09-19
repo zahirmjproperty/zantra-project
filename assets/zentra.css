@@ -1,0 +1,586 @@
+/* ============================================================================
+   ZENTRA DESIGN SYSTEM — zentra.css
+   Modern · Futuristic · Luxury
+   Source of truth: DESIGN.md (lint-clean, 0 errors / 0 warnings)
+   Tokens mirror exports/zentra-tokens.css — edit DESIGN.md, then re-export.
+   ============================================================================ */
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("PlusJakartaSans-var.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Palette (from DESIGN.md) ---- */
+  --primary: #0b1b2e;
+  --navy-deep: #071120;
+  --navy-panel: #12283f;
+  --navy-elevated: #16304a;
+  --gold-core: #c9a227;
+  --gold-light: #e8ce86;
+  --gold-deep: #9a7a2e;
+  --text-primary: #ffffff;
+  --text-body: #c7d1dc;
+  --text-muted: #8c9fb4;
+  --on-gold: #0b1b2e;
+  --success: #43b02a;
+  --warning: #d98a1f;
+  --danger: #e8776a;
+  --info: #00a3b5;
+  --success-deep: #2e7d1f;
+  --warning-deep: #8a5a00;
+  --danger-deep: #c0392b;
+  --info-deep: #00707e;
+  --surface-light: #f5f7f9;
+  --ink-light: #16222f;
+  --muted-light: #5f6b7a;
+  --line-light: #e2e8f0;
+
+  /* ---- Metallic gradients: gold is NEVER flat ---- */
+  --grad-gold: linear-gradient(135deg, #e8ce86 0%, #c9a227 45%, #9a7a2e 100%);
+  --grad-gold-hover: linear-gradient(135deg, #f3e2ac 0%, #d9b445 45%, #a8863a 100%);
+  --grad-silver: linear-gradient(180deg, #ffffff 0%, #c3ccd8 100%);
+  --grad-navy: linear-gradient(160deg, #12283f 0%, #071120 78%);
+  --grad-sky: linear-gradient(180deg, #071120 0%, #0e2138 42%, #3a3a4d 66%, #8a6a42 82%, #c9a227 100%);
+
+  /* ---- Elevation: light + hairline, not drop shadow ---- */
+  --glow-gold: 0 0 28px rgba(201, 162, 39, 0.35);
+  --hairline: rgba(201, 162, 39, 0.5);
+  --hairline-soft: rgba(201, 162, 39, 0.28);
+  --lift: 0 1px 0 rgba(255, 255, 255, 0.05) inset;
+
+  /* ---- Shape ---- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---- Spacing ---- */
+  --s-xs: 4px;
+  --s-sm: 8px;
+  --s-md: 16px;
+  --s-lg: 24px;
+  --s-xl: 40px;
+  --s-2xl: 64px;
+  --s-3xl: 96px;
+
+  --wrap: 1120px;
+  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font);
+  background: var(--primary);
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+/* ============================ TYPE SCALE ============================ */
+.display {
+  font-size: clamp(38px, 6.2vw, 68px);
+  font-weight: 800; line-height: 1.02; letter-spacing: -0.02em;
+  text-transform: uppercase; color: var(--text-primary);
+}
+h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; color: var(--text-primary); }
+h2 { font-size: clamp(23px, 2.6vw, 30px); font-weight: 700; line-height: 1.18; letter-spacing: -0.01em; color: var(--text-primary); }
+h3 { font-size: 19px; font-weight: 700; line-height: 1.3; letter-spacing: 0em; color: var(--text-primary); }
+p  { font-size: 17px; line-height: 1.65; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); }
+.micro   { font-size: 11.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); }
+.label   { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.numeric { font-size: 30px; font-weight: 800; line-height: 1.1; letter-spacing: -0.01em; color: var(--text-primary); }
+.lead    { font-size: 17px; line-height: 1.65; color: var(--text-body); }
+.muted   { color: var(--text-muted); }
+
+/* wordmark gradients — lockup only, never applied to other headings */
+.grad-silver { background: var(--grad-silver); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-gold   { background: var(--grad-gold);   -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ============================ HEADER ============================ */
+.site-header {
+  position: sticky; top: 0; z-index: 60;
+  background: rgba(7, 17, 32, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.header-inner { display: flex; align-items: center; gap: 28px; min-height: 72px; }
+
+.brand { display: flex; align-items: center; gap: 12px; margin-right: auto; }
+.brand-mark { width: 36px; height: 36px; flex: 0 0 auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.02; }
+.brand-text b { font-size: 16px; font-weight: 800; letter-spacing: 0.14em; color: var(--text-primary); }
+.brand-text span { font-size: 16px; font-weight: 800; letter-spacing: 0.14em; background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.nav { display: flex; gap: 26px; }
+.nav a {
+  font-size: 14.5px; font-weight: 500; color: var(--text-muted);
+  padding: 6px 0; position: relative; transition: color 0.18s ease;
+}
+.nav a:hover { color: var(--text-primary); }
+/* active state = gold text + gold hairline underline (not a filled pill) */
+.nav a[aria-current="page"] { color: var(--gold-core); font-weight: 700; }
+.nav a[aria-current="page"]::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
+  height: 1px; background: var(--grad-gold);
+}
+
+.header-tagline { display: flex; align-items: center; gap: 14px; }
+.header-tagline .bar { width: 1px; height: 26px; background: var(--hairline-soft); }
+.header-tagline span { font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); max-width: 128px; line-height: 1.5; }
+/* right-hand login: balances the bar and gives the header a clear action */
+.header-login {
+  display: inline-flex; align-items: center; gap: 8px; margin-left: 4px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold-core); border: 1px solid var(--hairline); border-radius: var(--r-pill);
+  padding: 9px 16px; white-space: nowrap; transition: all 0.18s ease;
+}
+.header-login:hover { background: var(--navy-panel); color: var(--gold-light); }
+@media (max-width: 1240px) { .header-login { display: none; } }
+
+/* ============================ BUTTONS ============================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--font); font-size: 15px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border: 0; cursor: pointer; transition: all 0.2s ease;
+}
+/* primary: gold gradient pill + soft glow — exactly one per viewport */
+.btn-primary {
+  background: var(--grad-gold); color: var(--on-gold);
+  border-radius: var(--r-pill); padding: 15px 26px 15px 15px;
+  box-shadow: var(--glow-gold);
+}
+.btn-primary:hover { background: var(--grad-gold-hover); }
+.btn-primary .orb {
+  width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
+  background: rgba(11, 27, 46, 0.16);
+  display: grid; place-items: center;
+}
+.btn-primary .stack { display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.btn-primary .stack small {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: none; opacity: 0.78;
+}
+/* ghost: gold outline on navy */
+.btn-ghost {
+  background: transparent; color: var(--gold-core);
+  border: 1px solid var(--hairline); border-radius: var(--r-pill);
+  padding: 14px 26px;
+}
+.btn-ghost:hover { background: var(--navy-panel); color: var(--gold-light); }
+.btn-arrow {
+  width: 46px; height: 46px; border-radius: 50%;
+  border: 1px solid var(--hairline); background: transparent;
+  color: var(--gold-core); display: grid; place-items: center; cursor: pointer;
+}
+.btn-arrow:hover { background: var(--navy-panel); }
+
+/* ============================ PANELS / CARDS ============================ */
+.panel-navy { background: var(--navy-panel); border: 1px solid var(--hairline-soft); border-radius: var(--r-md); padding: 24px; }
+.panel-glass { background: var(--navy-elevated); border: 1px solid var(--hairline); border-radius: var(--r-lg); padding: 24px; box-shadow: var(--lift); }
+.card-light { background: var(--surface-light); color: var(--ink-light); border-radius: var(--r-md); padding: 20px; }
+
+.stat-card { background: var(--navy-panel); border: 1px solid var(--hairline-soft); border-radius: var(--r-md); padding: 18px; }
+.stat-card .stat-label { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-top: 6px; }
+
+.badge { display: inline-flex; align-items: center; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: var(--r-pill); padding: 7px 14px; }
+.badge-success { color: var(--success); background: rgba(67, 176, 42, 0.12); }
+.badge-warning { color: var(--warning); background: rgba(217, 138, 31, 0.12); }
+.badge-danger  { color: var(--danger);  background: rgba(232, 119, 106, 0.12); }
+.badge-info    { color: var(--info);    background: rgba(0, 163, 181, 0.12); }
+
+/* icon containers — circle for hero, rounded square elsewhere */
+.icon-circle { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--hairline); display: grid; place-items: center; color: var(--gold-core); flex: 0 0 auto; }
+.icon-tile { width: 44px; height: 44px; border-radius: var(--r-md); border: 1px solid var(--hairline); background: var(--navy-panel); display: grid; place-items: center; color: var(--gold-core); flex: 0 0 auto; }
+
+.divider-gold { height: 1px; background: var(--hairline); border: 0; }
+.divider-fade { width: 1px; align-self: stretch; background: linear-gradient(180deg, transparent, var(--hairline-soft) 22%, var(--hairline-soft) 78%, transparent); }
+
+/* ============================ HERO (asymmetric 40/60) ============================ */
+.hero { display: grid; grid-template-columns: 42% 58%; min-height: 668px; background: var(--grad-navy); position: relative; overflow: hidden; }
+.hero-copy { min-width: 0; padding: 64px 44px 56px max(24px, calc((100vw - var(--wrap)) / 2 + 24px)); display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+.hero-copy .eyebrow { margin-bottom: 10px; }
+.hero-copy .display { margin-bottom: 14px; }
+.hero-copy .subhead { font-size: clamp(19px, 1.9vw, 25px); font-weight: 700; color: var(--text-primary); margin-bottom: 16px; line-height: 1.25; }
+.hero-copy p.lead { max-width: 46ch; margin-bottom: 28px; }
+
+.feature-rail { display: flex; align-items: stretch; gap: 18px; margin-bottom: 30px; }
+.feature-rail .item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; flex: 1; }
+.feature-rail .item span {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-primary); line-height: 1.35;
+  white-space: nowrap;  /* only the explicit <br> breaks a line */
+  min-height: 2.7em;    /* all four labels = 2 lines -> even bottom edge */
+}
+.feature-rail .divider-fade { margin: 6px 0; }
+
+.cta-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+/* decorative diagonal gold hairlines — max two per page */
+.sheen { position: absolute; width: 190px; height: 1px; background: linear-gradient(90deg, transparent, var(--hairline)); pointer-events: none; }
+.sheen.tl { top: 52px; left: -30px; transform: rotate(-38deg); }
+.sheen.bl { bottom: 74px; left: -14px; transform: rotate(24deg); }
+
+/* hero visual field — photographic background (replaces the drawn SVG skyline).
+   The photo is the customer-facing artwork: no filters that would misrepresent it. */
+.hero-visual { position: relative; overflow: hidden; min-width: 0; background: var(--grad-navy); }
+.hero-photo { position: absolute; inset: 0; display: block; }
+.hero-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  /* keeps sky + towers + tree line in frame and pulls the horizon clear of the laptop */
+  object-position: center 32%;
+}
+/* Legibility scrim only — it sits under the device mock-ups (z-index 3), never over them. */
+.hero-scrim {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(7, 17, 32, 0.62) 0%, rgba(7, 17, 32, 0.10) 26%, rgba(7, 17, 32, 0.16) 62%, rgba(7, 17, 32, 0.72) 100%),
+    linear-gradient(90deg, rgba(7, 17, 32, 0.45) 0%, rgba(7, 17, 32, 0.12) 55%, rgba(7, 17, 32, 0.42) 100%);
+}
+/* gold kiss on the bottom edge so the photo ties into the palette */
+.hero-scrim::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(201, 162, 39, 0.20) 0%, transparent 42%);
+}
+
+/* device mock-ups anchored bottom-right */
+.devices { position: absolute; right: 34px; bottom: 26px; display: flex; align-items: flex-end; gap: 0; z-index: 3; }
+/* phone sits in FRONT-LEFT, overlapping only the dashboard's icon rail (decorative) —
+   never a data column. Deviation from the reference (phone was bottom-right), deliberate. */
+.laptop { width: 392px; position: relative; }  /* fixed: mock-up must never reflow */
+.laptop-screen {
+  background: var(--surface-light); border: 8px solid #1d2b3c; border-bottom: 0;
+  border-radius: var(--r-md) var(--r-md) 0 0; overflow: hidden; box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+}
+.laptop-base {
+  width: 114%; margin-left: -7%; height: 14px;
+  background: linear-gradient(180deg, #33445a, #16222f 70%);
+  border-radius: 0 0 12px 12px;
+  position: relative;
+}
+.laptop-base::after {
+  content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+  width: 64px; height: 4px; border-radius: 0 0 6px 6px; background: rgba(0, 0, 0, 0.45);
+}
+.phone {
+  order: -1;              /* phone LEFT of laptop */
+  width: 138px; margin-right: -46px; margin-bottom: 26px;
+  background: var(--navy-deep); border: 6px solid #1d2b3c;
+  border-radius: 22px; padding: 18px 13px 20px; text-align: center;
+  box-shadow: 0 28px 54px rgba(0, 0, 0, 0.62); position: relative; z-index: 4;
+}
+/* contact shadows ground both devices on the plaza */
+.laptop::after, .phone::before {
+  content: ""; position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+  width: 88%; height: 18px; border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.55) 0%, transparent 72%);
+}
+.phone .pmark { width: 42px; height: 42px; margin: 6px auto 12px; }
+.phone ul { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 8px; }
+.phone li { font-size: 8.5px; font-weight: 600; letter-spacing: 0.03em; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
+.phone li i { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-core); flex: 0 0 auto; }
+
+/* dashboard inside laptop (light = dense operational surface) */
+.dash { display: grid; grid-template-columns: 88px 1fr; font-size: 9px; }
+.dash-rail { background: var(--primary); padding: 12px 9px; }
+.dash-rail .dmark { width: 20px; height: 20px; margin-bottom: 12px; }
+.dash-rail div { color: var(--text-muted); font-size: 8px; font-weight: 600; padding: 5px 0; letter-spacing: 0.02em; }
+.dash-rail div.on { color: var(--gold-core); }
+.dash-main { background: var(--surface-light); padding: 12px; overflow: hidden; }
+.dash-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-bottom: 9px; }
+.dash-stats .s { background: #fff; border: 1px solid var(--line-light); border-radius: 7px; padding: 7px 8px; }
+.dash-stats .s b { display: block; font-size: 14px; font-weight: 800; color: var(--ink-light); letter-spacing: -0.01em; }
+.dash-stats .s i { font-style: normal; font-size: 6.5px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted-light); }
+.dash-sec { font-size: 7.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-light); margin: 9px 0 5px; }
+.dash-port { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.dash-port .p { background: #fff; border: 1px solid var(--line-light); border-radius: 7px; padding: 6px; text-align: center; }
+.dash-port .p b { display: block; font-size: 11px; font-weight: 800; color: var(--ink-light); }
+.dash-port .p i { font-style: normal; font-size: 6px; color: var(--muted-light); font-weight: 600; }
+.dash-tbl { width: 100%; border-collapse: collapse; }
+.dash-tbl td { font-size: 7px; padding: 4px 0; border-bottom: 1px solid var(--line-light); color: var(--ink-light); }
+.dash-tbl td:last-child { text-align: right; font-weight: 700; }
+
+/* ============================ BENEFIT BAND ============================ */
+.band { background: var(--navy-deep); border-top: 1px solid var(--hairline); position: relative; overflow: hidden; }
+.band .tagline { text-align: center; padding: 34px 24px 8px; }
+.band .tagline span {
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+  background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 24px 0 44px; position: relative; z-index: 2; }
+/* icon inline-left of text — avoids the icon-topper template tell */
+.benefits .b { display: flex; align-items: flex-start; gap: 14px; padding: 6px 24px; min-width: 0; }
+.benefits .b > * { min-width: 0; }
+.benefits .b span { overflow-wrap: anywhere; }
+.benefits .b + .b { border-left: 1px solid var(--hairline-soft); }
+.benefits .b b { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 3px; }
+.benefits .b span { font-size: 12.5px; color: var(--text-muted); }
+.watermark { position: absolute; right: -30px; bottom: -40px; width: 260px; opacity: 0.05; pointer-events: none; }
+
+/* ============================ FOOTER ============================ */
+.site-footer { background: var(--navy-deep); border-top: 1px solid var(--hairline-soft); padding: 30px 0; }
+.site-footer .inner { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.site-footer .micro { margin-left: auto; }
+
+/* ============================ A11Y ============================ */
+:focus-visible { outline: 2px solid var(--gold-core); outline-offset: 3px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 1120px) {
+  .hero { grid-template-columns: 48% 52%; }
+  .header-tagline { display: none; }
+}/* device group = 392 + 138 - 46 = 484px natural; scale it down rather than
+   squeezing the dashboard (which would clip its data). */
+@media (max-width: 1120px) and (min-width: 901px) {
+  .devices { transform: scale(0.86); transform-origin: bottom right; }
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-copy { padding: 48px 24px 40px; }
+  .hero-visual { min-height: 430px; }
+  .devices { right: 50%; transform: translateX(50%); transform-origin: bottom center; }
+  .devices { bottom: 20px; }
+}
+@media (max-width: 560px) {
+  .devices { transform: translateX(50%) scale(0.78); }
+}
+@media (max-width: 420px) {
+  .devices { transform: translateX(50%) scale(0.60); }
+}
+/* <=340px: leave room for the laptop base overhang so nothing is clipped */
+@media (max-width: 340px) {
+  .devices { transform: translateX(50%) scale(0.53); }
+}
+@media (max-width: 720px) {
+  .nav { display: none; }
+  .benefits { grid-template-columns: 1fr 1fr; padding-bottom: 34px; }
+  .benefits .b + .b { border-left: 0; }
+  .benefits .b { padding: 14px 18px; }
+  .benefits .b:nth-child(odd) { border-right: 1px solid var(--hairline-soft); }
+  .benefits .b:nth-child(n + 3) { border-top: 1px solid var(--hairline-soft); }
+  .feature-rail { gap: 10px; }
+  .feature-rail .item span { font-size: 9.5px; }
+  .icon-circle { width: 50px; height: 50px; }
+}
+/* feature rail: 4 labels can't fit under ~400px -> wrap to 2x2 */
+@media (max-width: 400px) {
+  .feature-rail { flex-wrap: wrap; row-gap: 16px; }
+  .feature-rail .item { flex: 0 0 calc(50% - 6px); }
+  .feature-rail .divider-fade { display: none; }
+}
+@media (max-width: 460px) {
+  .benefits { grid-template-columns: 1fr; }
+  .benefits .b { border-right: 0 !important; border-top: 0; padding: 12px 20px; }
+  .benefits .b + .b { border-top: 1px solid var(--hairline-soft); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+  /* keep a static gold edge so the button still reads as a CTA */
+  .icon-circle::after { display: none; }
+}
+
+
+/* ============================================================================
+   COMPONENT — .zbtn   |   Zentra gold shimmer button
+   "Kilauan emas bergerak mengelilingi border"
+
+   WHY PRIOR ATTEMPTS FAILED
+   -------------------------
+   Earlier versions animated `transform: rotate(360deg)` on the ring element.
+   Rotating the ELEMENT rotates its box and its mask too, so the ring swings
+   off the button's rounded rectangle, sweeps across the button face, and
+   breaks at the corners. It cannot work at any speed.
+
+   THE FIX
+   -------
+   Animate the GRADIENT ANGLE, not the element. A registered Houdini custom
+   property makes it interpolatable:
+
+       @property --za { syntax: "<angle>"; initial-value: 0deg; }
+
+   The element never moves, so the ring stays locked to the border radius
+   while the light travels around it.
+
+   LAYER STACK — no mask-composite anywhere (that is what broke before):
+     .zbtn         transparent wrapper; its `padding` IS the ring thickness
+     .zbtn         own background = permanent subtle gold base ring
+     .zbtn::before blurred conic gradient  -> glow that bleeds OUTWARD
+     .zbtn::after  crisp   conic gradient  -> the travelling light
+     .zbtn-face    opaque face; covers the centre, leaving only the ring
+   ========================================================================== */
+
+@property --za {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes zentra-orbit { to { --za: 360deg; } }
+
+.zbtn {
+  --zbtn-ring: 2px;
+  --zbtn-r: 14px;
+  --zbtn-r-out: calc(var(--zbtn-r) + var(--zbtn-ring));
+  --zbtn-dur: 3.6s;
+  /* STOPS ONLY (no gradient wrapper). Traps: a gradient stored in a custom
+     property gets its inner var(--za) RESOLVED at declaration time on .zbtn,
+     so animating --za on the pseudo-element can no longer reach it. We pass
+     the raw stop list instead and build the gradient inside the pseudo rule,
+     where var(--za) is still live. */
+  --zbtn-stops:
+      rgba(255,246,208,0)    0deg,
+      rgba(255,246,208,0)  205deg,
+      rgba(255,246,208,.16) 234deg,
+      rgba(255,246,208,.72) 268deg,
+      #fff6d0               292deg,
+      #f4d888               310deg,
+      #c9a227               332deg,
+      rgba(201,162,39,.10)  352deg,
+      rgba(201,162,39,0)    360deg;
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  padding: var(--zbtn-ring);
+  border-radius: var(--zbtn-r-out);
+  text-decoration: none;
+  /* permanent base ring — paints beneath every other layer */
+  background: linear-gradient(135deg,
+      rgba(201,162,39,.62) 0%,
+      rgba(244,216,136,.30) 46%,
+      rgba(201,162,39,.62) 100%);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.zbtn::before,
+.zbtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(from var(--za) at 50% 50%, var(--zbtn-stops));
+  animation: zentra-orbit var(--zbtn-dur) linear infinite;
+  pointer-events: none;
+}
+/* outward glow — blur bleeds past the box; NO ancestor may clip it */
+.zbtn::before { z-index: 0; filter: blur(9px) saturate(1.35); opacity: .80; }
+/* the travelling light */
+.zbtn::after  { z-index: 1; }
+
+.zbtn-face {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: var(--zbtn-r);
+  padding: 15px 26px;
+  background: linear-gradient(180deg, #17273f 0%, #0d1a2c 100%);
+  color: #f4d888;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* interaction */
+.zbtn:hover { transform: translateY(-1px); }
+.zbtn:hover::before { opacity: 1; filter: blur(11px) saturate(1.5); }
+.zbtn:active { transform: translateY(0); }
+.zbtn:focus-visible { outline: 2px solid #f4d888; outline-offset: 3px; }
+
+/* sizes */
+.zbtn--sm .zbtn-face { padding: 10px 16px; gap: 9px; font-size: 13px; }
+.zbtn--md .zbtn-face { padding: 12px 20px; gap: 11px; font-size: 14px; }
+.zbtn--lg .zbtn-face { padding: 15px 26px; gap: 14px; font-size: 15px; }
+
+/* faded variant — softer, for secondary CTAs */
+.zbtn--soft { background: linear-gradient(135deg,
+      rgba(201,162,39,.28) 0%, rgba(244,216,136,.14) 46%, rgba(201,162,39,.28) 100%); }
+
+/* frozen-frame helper (used by the motion test rig + the lab film strip) */
+.zbtn--frozen::before,
+.zbtn--frozen::after {
+  animation-play-state: paused;
+  animation-delay: var(--fd, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* --za is registered with inherits:false, so it must be set ON the
+     pseudo-elements. Setting it on .zbtn silently did nothing. */
+  .zbtn::before,
+  .zbtn::after { animation: none; --za: 300deg; }
+  .zbtn:hover { transform: none; }
+  .zbtn:hover::before { filter: blur(9px) saturate(1.35); }
+}
+
+/* ---- pill variant + hero face: same orbit ring, banner-style layout ---- */
+.zbtn--pill { --zbtn-r: 999px; }
+.zbtn--pill .zbtn-face {
+  border-radius: var(--r-pill);
+  padding: 11px 28px 11px 11px;
+}
+.zbtn-face--hero .orb {
+  width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
+  background: rgba(11, 27, 46, 0.28);
+  display: grid; place-items: center;
+}
+.zbtn-face--hero .stack {
+  display: flex; flex-direction: column; gap: 2px; text-align: left;
+  font-size: 15px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.zbtn-face--hero .stack small {
+  font-size: 11px; font-weight: 500; letter-spacing: .06em;
+  text-transform: none; opacity: .78;
+}
+
+/* ============================================================================
+   COMPONENT — .icon-circle   |   gold shimmer sweep across the icon
+   Requested with the button glow ("kilauan emas" on the icons too).
+   The sweep only crosses the icon disc, so it reads as light passing over
+   metal rather than a flashing block.
+   ============================================================================ */
+.icon-circle {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.icon-circle::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -160%;
+  width: 60%;
+  height: 140%;
+  background: linear-gradient(115deg,
+      rgba(255,246,208,0) 0%,
+      rgba(255,246,208,.38) 40%,
+      rgba(255,255,255,.72) 50%,
+      rgba(255,246,208,.38) 60%,
+      rgba(255,246,208,0) 100%);
+  transform: skewX(-18deg);
+  animation: zentra-shimmer 5.2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+@keyframes zentra-shimmer {
+  0%, 62%   { left: -160%; }
+  88%, 100% { left: 160%; }
+}

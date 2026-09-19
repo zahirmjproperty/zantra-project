@@ -1,0 +1,19 @@
+# Data & snapshot — JANGAN jejak dalam repo awam (punca P0-1 pada repo mrtanah)
+portal/data/
+data/
+*.snapshot.json
+pemuka-*.json
+pemilik-*.json
+
+# Kredensial
+.env
+.env.*
+*.key
+*.pem
+credentials/
+
+# Sampah sistem
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
