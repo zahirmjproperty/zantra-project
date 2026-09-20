@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Launch — Settings</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search settings..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="page-title">
+      <h1>Settings</h1>
+      <div class="breadcrumb"><span>Zentra Launch</span> · <span>System Settings</span></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Project setup</h2><span class="more">6 projects</span></div>
+      <div class="card-bd">
+        <div class="form-group"><label>Project profile</label><input type="text" value="Avalon @ Cybersouth" aria-label="Project"></div>
+        <div class="form-group"><label>Phases / blocks</label><input type="text" value="Phase 1 · Block A, Block B" aria-label="Phases"></div>
+        <div class="form-group"><label>Unit types &amp; price list</label><input type="text" value="3R2B RM 385K–489K · 4R3B RM 612K–742K" aria-label="Price list"></div>
+        <div class="form-group"><label>Development licence (DL) / APDL</label><input type="text" value="DL 2026/0418 · APDL 2026/1042" aria-label="Licence"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Sales rules</h2></div>
+      <div class="card-bd">
+        <div class="form-group"><label>Unit lock duration</label><select aria-label="Lock"><option>24 hours</option><option>48 hours (default)</option><option>72 hours</option></select></div>
+        <div class="form-group"><label>Lock buffer between bookings</label><select aria-label="Buffer"><option>1 hour</option><option>2 hours (default)</option><option>4 hours</option></select></div>
+        <div class="form-group"><label>EOI validity</label><select aria-label="EOI"><option>3 days</option><option>7 days (default)</option><option>14 days</option></select></div>
+        <div class="form-group"><label>SPA signing window</label><select aria-label="SPA window"><option>14 days from booking (default)</option><option>21 days</option><option>30 days</option></select></div>
+        <div class="form-group"><label>Discount policy (decision 19/9/2026)</label><select aria-label="Discount"><option>No discounts — published launch packages only</option><option>Agent up to 2%, manager up to 5%</option><option>Manager approves all discounts</option></select></div>
+        <div class="form-group"><label>Bumi quota control (decision 19/9/2026)</label><select aria-label="Bumi"><option>System holds bumi units until the release date</option><option>Warning only — management releases manually</option><option>No bumi quota for this project</option><option>Follow the state authority's conditions per project</option></select></div>
+        <div class="form-group"><label>Max active locks per buyer</label><select aria-label="Max locks"><option>1 unit</option><option>2 units (default)</option><option>3 units</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Commission rules</h2></div>
+      <div class="card-bd">
+        <div class="form-group"><label>Internal agent rate</label><select aria-label="Internal rate"><option>2.0%</option><option>2.5% (default)</option><option>3.0%</option></select></div>
+        <div class="form-group"><label>Co-agency split (MT : partner)</label><select aria-label="Split"><option>40 : 60</option><option>50 : 50 (default)</option><option>60 : 40</option></select></div>
+        <div class="form-group"><label>Release trigger (decision 19/9/2026)</label><select aria-label="Triggers"><option>Single release after end-financing disbursement (100%)</option><option>Single release after full cash settlement (100%)</option><option>Staggered release (booking / SPA / disbursement)</option></select></div>
+        <div class="form-group"><label>Entitlement held until disbursement</label><select aria-label="Held"><option>Yes — no payout on booking or SPA (default)</option><option>No — release on SPA</option></select></div>
+        <div class="form-group"><label>Evidence required before release</label><input type="text" value="Bank advice (end-financier) or final receipt + developer confirmation" aria-label="Evidence"></div>
+        <div class="form-group"><label>Cancellation before disbursement</label><select aria-label="Cancellation"><option>Release nothing (default)</option><option>Release pro-rated share</option></select></div>
+        <div class="form-group"><label>Clawback on cancellation (NTU)</label><select aria-label="Clawback"><option>Full recall of unreleased share</option><option>Pro-rated by stage (default)</option><option>No clawback</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Billing &amp; e-invoice</h2></div>
+      <div class="card-bd">
+        <div class="form-group"><label>Payment schedule template</label><select aria-label="Schedule"><option>Third Schedule (HDA 1966) — 10-10-15-10-10-15-10-5-5-10</option><option>Custom per project</option></select></div>
+        <div class="form-group"><label>Invoice prefix</label><input type="text" value="INV-YYMM-" aria-label="Prefix"></div>
+        <div class="form-group"><label>Issuing entity (e-invoice)</label><input type="text" value="ZMJ Solutions (002093603-H) · TIN 202301234567" aria-label="Entity"></div>
+        <div class="form-group"><label>Late payment interest</label><select aria-label="Interest"><option>10% p.a. (SPA standard)</option><option>8% p.a.</option><option>None</option></select></div>
+        <div class="form-group"><label>Payment route (per project — decision 19/9/2026)</label><select aria-label="Payment route"><option>Developer's Housing Development Account (HDA 1966 s.7A) — record only by Zentra Launch</option><option>Solicitor's client account (SPA-stage payments)</option><option>Operator's own account (non-licensed project)</option></select></div>
+        <div class="form-group"><label>Buyer proof of payment</label><select aria-label="Proof"><option>Upload bank-in slip / cheque copy — sales office reconciles (default)</option><option>Record only, no upload</option><option>Require bank confirmation letter</option></select></div>
+        <div class="form-group"><label>Online collection (card / e-wallet / QR)</label><select aria-label="Collection"><option>Disabled — Zentra Launch never holds client money (default)</option><option>Enabled for non-licensed projects only</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Data ownership — system of record</h2><span class="more">decision 19/9/2026</span></div>
+      <div class="card-bd">
+        <div class="form-group"><label>System of record</label><select aria-label="System of record"><option>Zentra Launch — from cutover (decision B)</option><option>Notion 'Projek Baharu MT' — until freeze</option></select></div>
+        <div class="form-group"><label>Notion 'Projek Baharu MT'</label><select aria-label="Notion role"><option>Read-only archive after one-time import</option><option>Still editable (pre-freeze)</option><option>Retired</option></select></div>
+        <div class="form-group"><label>Write lock on Notion fields</label><select aria-label="Write lock"><option>Units, prices, locks and bookings (default)</option><option>All fields</option><option>None</option></select></div>
+        <div class="form-group"><label>Import status</label><input type="text" value="Not started — scheduled in F1a (import → verify → freeze)" aria-label="Import"></div>
+        <div class="form-group"><label>Audit trail retention</label><select aria-label="Audit"><option>Every change, who and when (default)</option><option>Status changes only</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Agents &amp; access</h2></div>
+      <div class="card-bd">
+        <div class="form-group"><label>Agent roster</label><input type="text" value="9 internal · 3 COA partners" aria-label="Roster"></div>
+        <div class="form-group"><label>Agent sees (decision 19/9/2026)</label><select aria-label="Agent access"><option>Own leads, locks and commission only (default)</option><option>All units, own buyers and commission</option><option>Full read access</option></select></div>
+        <div class="form-group"><label>Developer portal</label><select aria-label="Developer access"><option>Sales board + reports (read only)</option><option>Sales board + approve prices</option><option>No access</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><h2>Compliance &amp; brand</h2></div>
+      <div class="card-bd">
+        <div class="form-group"><label>DL / APDL fields on public microsite</label><select aria-label="DL gate"><option>Mandatory — page stays noindex if incomplete (default)</option><option>Warning only</option></select></div>
+        <div class="form-group"><label>eSPA / HIMS KPKT export</label><select aria-label="HIMS"><option>Enabled (required from 1 Jan 2026)</option><option>Disabled</option></select></div>
+        <div class="form-group"><label>Record retention (PDPA)</label><select aria-label="Retention"><option>7 years after vacant possession (default)</option><option>7 years after handover + 1</option></select></div>
+        <div class="form-group"><label>Client-facing system name</label><input type="text" value="Zentra Launch" aria-label="Brand"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
