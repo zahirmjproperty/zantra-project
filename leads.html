@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Launch — Leads</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="leads.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search leads..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="page-title">
+      <h1>Leads</h1>
+      <div class="breadcrumb"><span>Zentra Launch</span> · <span>Buyers &amp; Inquiries</span></div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="value">86</div><div class="label">Total Leads</div><div class="trend up">↑ 12 this week</div></div>
+      <div class="stat-card"><div class="value">12</div><div class="label">Hot Leads</div><div class="trend up">↑ 3 this week</div></div>
+      <div class="stat-card"><div class="value">5</div><div class="label">EOI Pending</div><div class="trend down">↓ 2</div></div>
+      <div class="stat-card"><div class="value">38%</div><div class="label">Conversion</div><div class="trend up">↑ 2%</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><h2>Recent Inquiries</h2></div>
+      <div class="card-bd">
+        <table class="dash-table">
+          <thead><tr><th>Name</th><th>Project</th><th>Contact</th><th>Source</th><th>Status</th><th>Date</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600" data-label="Name">Ahmad Faiz</td><td data-label="Project">Avalon Cybersouth</td><td data-label="Contact">012-345 6789</td><td data-label="Source">Website</td><td data-label="Status"><span class="badge red">Hot</span></td><td data-label="Date">19 Sep 2026</td></tr>
+            <tr><td style="font-weight:600" data-label="Name">Siti Nurhaliza</td><td data-label="Project">Setia Seraya P15</td><td data-label="Contact">018-234 5678</td><td data-label="Source">Facebook</td><td data-label="Status"><span class="badge amber">Warm</span></td><td data-label="Date">18 Sep 2026</td></tr>
+            <tr><td style="font-weight:600" data-label="Name">Ravi Kumar</td><td data-label="Project">Allamanda KLIA</td><td data-label="Contact">016-543 2109</td><td data-label="Source">EOI Form</td><td data-label="Status"><span class="badge info">New</span></td><td data-label="Date">17 Sep 2026</td></tr>
+            <tr><td style="font-weight:600" data-label="Name">Lim Wei Hong</td><td data-label="Project">Senna Presint 12</td><td data-label="Contact">019-876 5432</td><td data-label="Source">Referral</td><td data-label="Status"><span class="badge red">Hot</span></td><td data-label="Date">16 Sep 2026</td></tr>
+            <tr><td style="font-weight:600" data-label="Name">Fatin Amira</td><td data-label="Project">Terra Residences</td><td data-label="Contact">011-1122 3344</td><td data-label="Source">Website</td><td data-label="Status"><span class="badge">Cold</span></td><td data-label="Date">15 Sep 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
