@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Launch — Unit detail</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search units..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="page-title">
+      <h1 id="title">Unit</h1>
+      <div class="breadcrumb" id="crumb"></div>
+      <div id="badge" style="margin:8px 0 0"></div>
+      <div id="sub" style="color:var(--text-dim);font-size:13.5px;margin-top:6px"></div>
+    </div>
+    <div class="banner">PREVIEW MOCK-UP — sample data. Locking, booking and SPA records are designed screens,
+      not live features. Buyer documents shown here are the same views the buyer sees in the buyer portal.</div>
+    <div class="stat-row" id="stats"></div>
+    <div class="split">
+      <div>
+        <div id="status"></div>
+        <div class="card"><div class="card-hd"><h2>Unit specification</h2></div>
+          <div class="card-bd kv" id="spec"></div></div>
+        <div class="card"><div class="card-hd"><h2>Price &amp; discount history</h2><span class="more">audit kept</span></div>
+          <div class="card-bd" id="price_history"></div></div>
+      </div>
+      <div>
+        <div class="card"><div class="card-hd"><h2>Floor plan</h2><span class="more">sample</span></div>
+          <div class="card-bd" id="plan"></div></div>
+        <div class="card"><div class="card-hd"><h2>Activity log</h2></div>
+          <div class="card-bd" id="audit"></div></div>
+      </div>
+    </div>
+
+<script>
+var UNITS = {"A-12-03": {"status": "Booked", "cls": "sold", "buyer": "Ahmad Faiz", "agent": "Aina Zulkifli (COA)", "ref": "LAU-2608-0113", "paid": 108900, "booking_date": "25 Aug 2026", "spa": "18 Sep 2026", "microsite": "buyer/index.html", "stage": 4}, "B-04-11": {"status": "SPA signed", "cls": "sold", "buyer": "Lim Wei Hong", "agent": "Fadilah Ismail", "ref": "LAU-2605-0088", "paid": 122400, "booking_date": "12 May 2026", "spa": "18 Sep 2026", "microsite": "buyer/index.html", "stage": 5}, "A-09-07": {"status": "Loan submitted", "cls": "reserved", "buyer": "Siti Nurhaliza", "agent": "Aina Zulkifli (COA)", "ref": "LAU-2607-0101", "paid": 108000, "booking_date": "21 Jul 2026", "spa": "30 Aug 2026", "microsite": "buyer/index.html", "stage": 5}, "A-11-05": {"status": "Reserved", "cls": "reserved", "buyer": "—", "agent": "Fadilah Ismail", "ref": "LAU-2609-0121", "paid": 0, "booking_date": "—", "spa": "—", "microsite": "", "stage": 2}, "E-11-05": {"status": "Reserved", "cls": "reserved", "buyer": "—", "agent": "Fadilah Ismail", "ref": "LAU-2609-0126", "paid": 0, "booking_date": "—", "spa": "—", "microsite": "", "stage": 2}, "C-08-02": {"status": "Reserved", "cls": "reserved", "buyer": "Ravi Kumar", "agent": "Aina Zulkifli (COA)", "ref": "LAU-2609-0119", "paid": 0, "booking_date": "—", "spa": "—", "microsite": "", "stage": 2}, "A-12-05": {"status": "Sold", "cls": "sold", "buyer": "Tan Mei Ling", "agent": "Hafiz Rahman (COA)", "ref": "LAU-2604-0044", "paid": 233000, "booking_date": "09 Apr 2026", "spa": "02 Jun 2026", "microsite": "buyer/index.html", "stage": 6}};
+function fmt(n){ return 'RM ' + Number(n).toLocaleString('en-MY'); }
+function el(id, html){ var e = document.getElementById(id); if (e) e.innerHTML = html; }
+function kv(rows){ return rows.map(function(r){
+  return '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'; }).join(''); }
+
+function parseUnit(id){
+  var m = /^([A-Z])-(\d+)-(\d+)$/.exec(id);
+  if (!m) return null;
+  var block = m[1], level = parseInt(m[2], 10), no = parseInt(m[3], 10);
+  var corner = (no === 3 || no === 9 || no === 12);
+  var built = corner ? 1150 : 1050;
+  var price = 361000 + (level - 1) * 6000 + (corner ? 41000 : 0);
+  return { id: id, block: block, level: level, no: no, built: built, price: price };
+}
+
+function render(){
+  var id = (new URLSearchParams(location.search).get('u') || 'A-12-03').toUpperCase();
+  var u = parseUnit(id) || parseUnit('A-12-03');
+  var d = UNITS[u.id] || null;
+  var status = d ? d.status : (u.no % 4 === 0 ? 'Reserved' : 'Available');
+  var cls = d ? d.cls : (status === 'Reserved' ? 'reserved' : 'available');
+  var paid = d ? d.paid : 0;
+  var outstanding = u.price - paid;
+
+  document.title = 'Zentra Launch — Unit ' + u.id;
+  el('crumb', '<a class="back" href="inventory.html">&larr; Unit inventory</a> · <a class="back" href="project.html?p=avalon-cybersouth">Avalon Cybersouth</a> · Block ' + u.block);
+  el('title', 'Unit ' + u.id);
+  el('sub', 'Avalon Cybersouth · Block ' + u.block + ' · Level ' + u.level + ' · 3R2B · ' + u.built + ' sq ft');
+  el('badge', '<span class="badge ' + (cls === 'sold' ? 'green' : cls === 'reserved' ? 'amber' : 'blue') + '">' + status + '</span>');
+  el('stats',
+    '<div class="stat-card"><div class="value">' + fmt(u.price) + '</div><div class="label">List price</div><div class="trend up">nett after discount below</div></div>' +
+    '<div class="stat-card"><div class="value">' + (paid ? fmt(paid) : '—') + '</div><div class="label">Paid to date</div><div class="trend ' + (paid ? 'up' : 'down') + '">' + (paid ? Math.round(paid / u.price * 100) + '% of price' : 'no payment yet') + '</div></div>' +
+    '<div class="stat-card"><div class="value">' + (paid ? fmt(outstanding) : '—') + '</div><div class="label">Outstanding</div><div class="trend down">progressive billing</div></div>' +
+    '<div class="stat-card"><div class="value">' + (d ? d.agent.split(' ')[0] : '—') + '</div><div class="label">Assigned agent</div><div class="trend up">' + (d ? d.agent : 'unassigned') + '</div></div>');
+  el('spec', kv([
+    ['Unit', u.id], ['Block / level', 'Block ' + u.block + ' · Level ' + u.level],
+    ['Type', '3R2B'], ['Built-up', u.built + ' sq ft (' + (u.built > 1050 ? 'corner' : 'intermediate') + ')'],
+    ['Bedrooms / baths', '3 / 2'], ['Car park bays', u.level >= 11 ? '2 (covered)' : '1 (covered)'],
+    ['Facing', u.no <= 6 ? 'Pool / city view' : 'Garden view'], ['Tenure', 'Freehold'],
+    ['Est. completion', 'Dec 2028'], ['DL / APDL', 'DL 2026/0418 · APDL 2026/1042']
+  ]));
+  el('price_history', '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Date</th><th>Entry</th><th>Amount</th></tr></thead><tbody>' +
+    '<tr><td data-label="Date">02 Jan 2026</td><td data-label="Entry">Launch price list</td><td class="num" data-label="Amount">' + fmt(u.price - 30000) + '</td></tr>' +
+    '<tr><td data-label="Date">17 Mar 2026</td><td data-label="Entry">Revision +2% (Block A)</td><td class="num" data-label="Amount">' + fmt(u.price) + '</td></tr>' +
+    (d ? '<tr><td data-label="Date">' + d.booking_date + '</td><td data-label="Entry">Launch discount — booking</td><td class="num gold" data-label="Amount">- ' + fmt(10000) + '</td></tr>' +
+         '<tr><td data-label="Date">—</td><td data-label="Entry"><b>Nett selling price</b></td><td class="num gold" data-label="Amount">' + fmt(u.price - 10000) + '</td></tr>' : '') +
+    '</tbody></table></div>');
+  el('plan', "<div class=\"plan\">\n<svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Sample 3R2B floor plan\">\n  <g fill=\"none\" stroke=\"#c9a227\" stroke-opacity=\".55\" stroke-width=\"1.4\">\n    <rect x=\"10\" y=\"10\" width=\"400\" height=\"280\" rx=\"3\"/>\n    <path d=\"M10 150h240M250 10v90M250 150v140M360 150v140M10 210h240\"/>\n  </g>\n  <g fill=\"#f0ead6\" fill-opacity=\".80\" font-family=\"Plus Jakarta Sans, sans-serif\" font-size=\"9.5\">\n    <text x=\"22\" y=\"30\">MASTER BEDROOM 14'0\" x 12'0\"</text>\n    <text x=\"22\" y=\"170\">LIVING / DINING 14'0\" x 13'0\"</text>\n    <text x=\"262\" y=\"30\">BEDROOM 2 10'0\" x 10'0\"</text>\n    <text x=\"262\" y=\"170\">BEDROOM 3 10'0\" x 9'0\"</text>\n    <text x=\"370\" y=\"30\">BATH 1</text>\n    <text x=\"370\" y=\"170\">BATH 2</text>\n    <text x=\"22\" y=\"230\">KITCHEN + YARD</text>\n  </g>\n  <g stroke=\"#94a3b8\" stroke-width=\"1\" fill=\"none\">\n    <path d=\"M250 128a12 12 0 0 1 22 0\" />\n    <path d=\"M360 128a12 12 0 0 1 22 0\" />\n    <path d=\"M80 205a12 12 0 0 1 0 22\" />\n  </g>\n  <g fill=\"#e8ce86\" font-family=\"Plus Jakarta Sans, sans-serif\" font-size=\"9\">\n    <text x=\"196\" y=\"294\">BUILT-UP 1,050 SQ FT</text>\n    <text x=\"18\" y=\"8\">N</text>\n  </g>\n</svg>\n<div class=\"cap\">Sample layout \u2014 3R2B \u00b7 1,050 sq ft \u00b7 layout varies by stack (mock-up)</div>\n</div>");
+
+  if (d) {
+    el('status', '<div class="card"><div class="card-hd"><h2>Booking</h2><span class="more">' + d.ref + '</span></div><div class="card-bd">' +
+      '<div class="kv">' + kv([
+        ['Status', status], ['Buyer', d.buyer], ['Agent', d.agent],
+        ['Booking date', d.booking_date], ['SPA signed', d.spa], ['Stage', 'Stage ' + d.stage + ' of 7']
+      ]) + '</div>' +
+      (d.microsite ? '<div style="margin-top:12px"><a class="btn btn-gold" href="' + d.microsite + '">Open buyer portal &rarr;</a> ' +
+        '<a class="btn btn-ghost" href="sales.html">Sales board</a></div>' : '') +
+      '</div></div>' +
+      '<div class="card"><div class="card-hd"><h2>Documents</h2></div><div class="card-bd">' +
+      '<div class="activity-list">' +
+      '<div class="activity-item"><div class="act-body"><div class="act-title">Booking form (signed)</div><div class="act-meta">' + (d.booking_date === '—' ? 'pending' : d.booking_date) + '</div></div><div class="act-amount">PDF</div></div>' +
+      '<div class="activity-item"><div class="act-body"><div class="act-title">Sale &amp; Purchase Agreement</div><div class="act-meta">' + (d.spa === '—' ? 'not signed yet' : 'signed ' + d.spa) + '</div></div><div class="act-amount">PDF</div></div>' +
+      '<div class="activity-item"><div class="act-body"><div class="act-title">Receipts &amp; e-invoices</div><div class="act-meta">' + (paid ? 'issued with each payment' : 'none yet') + '</div></div><div class="act-amount">' + (paid ? 'PDF' : '—') + '</div></div>' +
+      '</div></div></div>');
+  } else {
+    el('status', '<div class="card"><div class="card-hd"><h2>Availability</h2><span class="more">no contract</span></div><div class="card-bd">' +
+      '<div class="kv">' + kv([['Status', status], ['Price', fmt(u.price)], ['Lock duration', '48 hours, once booked'],
+      ['Max locks per buyer', '2 units'], ['Next step', 'Issue EOI &rarr; book deposit 10%']]) + '</div>' +
+      '<div style="margin-top:12px"><a class="btn btn-gold" href="#">Lock unit (48h)</a> ' +
+      '<a class="btn btn-ghost" href="#">Issue EOI</a></div>' +
+      '<div style="font-size:12.5px;color:var(--text-muted);margin-top:10px">No payment may be collected before the SPA is signed (Regulation 11(2), HDR 1989).</div>' +
+      '</div></div>' +
+      '<div class="card"><div class="card-hd"><h2>Documents</h2></div><div class="card-bd"><div class="activity-list">' +
+      '<div class="activity-item"><div class="act-body"><div class="act-title">Floor plan &amp; price list</div><div class="act-meta">approved revision, 17 Mar 2026</div></div><div class="act-amount">PDF</div></div>' +
+      '<div class="activity-item"><div class="act-body"><div class="act-title">DL / APDL copy</div><div class="act-meta">for buyer disclosure</div></div><div class="act-amount">PDF</div></div>' +
+      '</div></div></div>');
+  }
+
+  el('audit', '<div class="activity-list">' +
+    '<div class="activity-item"><div class="act-body"><div class="act-title">Viewed in inventory grid</div><div class="act-meta">Zahir Admin · today</div></div></div>' +
+    (d ? '<div class="activity-item"><div class="act-body"><div class="act-title">Booked — ' + d.buyer + '</div><div class="act-meta">' + d.agent + ' · ' + d.booking_date + '</div></div></div>' : '') +
+    '<div class="activity-item"><div class="act-body"><div class="act-title">Price revision +2% applied</div><div class="act-meta">by Approval · 17 Mar 2026</div></div></div>' +
+    '<div class="activity-item"><div class="act-body"><div class="act-title">Created with project import</div><div class="act-meta">system · 02 Jan 2026</div></div></div>' +
+    '</div>');
+}
+render();
+</script>
+
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
