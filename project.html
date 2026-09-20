@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Launch — Project detail</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search units in this project..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="page-title">
+      <h1 id="title">Project</h1>
+      <div class="breadcrumb" id="crumb"></div>
+      <div class="sub" id="sub" style="color:var(--text-dim);font-size:13.5px;margin-top:4px"></div>
+    </div>
+    <div class="banner">PREVIEW MOCK-UP — sample data. The public buyer microsite, price approval and eSPA/HIMS
+      submission are shown here as designed screens, not live features.</div>
+    <div class="chips" id="chips"></div>
+    <div id="risk"></div>
+    <div class="stat-row" id="stats"></div>
+    <div class="split">
+      <div>
+        <div class="card"><div class="card-hd"><h2>Phases &amp; blocks</h2><span class="more">take-up</span></div>
+          <div class="card-bd" id="blocks"></div></div>
+        <div class="card"><div class="card-hd"><h2>Price list</h2><span class="more">approved</span></div>
+          <div class="card-bd" id="prices"></div></div>
+        <div class="card"><div class="card-hd"><h2>Recent activity</h2></div>
+          <div class="card-bd" id="activity"></div></div>
+      </div>
+      <div>
+        <div class="card"><div class="card-hd"><h2>Project profile</h2><span class="more">edit</span></div>
+          <div class="card-bd kv" id="spec"></div></div>
+        <div class="card"><div class="card-hd"><h2>Sales team</h2></div>
+          <div class="card-bd" id="team"></div></div>
+        <div class="card"><div class="card-hd"><h2>Open in</h2></div>
+          <div class="card-bd"><div class="cta-row" id="links"></div>
+            <div class="note" style="font-size:12.5px;color:var(--text-muted);margin-top:10px">
+              Buyer-facing microsite is published only when the DL and APDL fields are complete (Regulation 6, HDR 1989).</div></div></div>
+      </div>
+    </div>
+
+<script>
+var PROJECTS = [{"slug": "avalon-cybersouth", "name": "Avalon Cybersouth", "type": "High-Rise", "location": "Cyberjaya, Selangor", "storeys": "17 storeys", "units": 120, "sold": 68, "reserved": 12, "launch": "Jan 2026", "completion": "Dec 2028", "avg_price": 486000, "land": "4.2 acres", "tenure": "Freehold", "dl": "DL 2026/0418", "apdl": "APDL 2026/1042 (valid to 31 Dec 2027)", "blocks": [["Block A", 60, 34], ["Block B", 60, 34]], "prices": [["3R2B", "1,050 sq ft", "RM 385,000 – 489,000"], ["4R3B", "1,320 sq ft", "RM 612,000 – 742,000"]], "team": [["Aina Zulkifli", "COA partner", 12], ["Fadilah Ismail", "Internal agent", 9], ["Hafiz Rahman", "COA partner", 6]], "activity": [["19 Sep 2026", "A-12-03 booked — Ahmad Faiz (RM 468,000)"], ["18 Sep 2026", "B-04-11 SPA signed — Lim Wei Hong"], ["17 Sep 2026", "Price list revision approved — Block B +2%"], ["12 Sep 2026", "Block A foundation certified (milestone 3)"]]}, {"slug": "setia-seraya-p15", "name": "Setia Seraya P15", "type": "Landed", "location": "Shah Alam, Selangor", "storeys": "2-storey terraces", "units": 86, "sold": 52, "reserved": 8, "launch": "Mar 2026", "completion": "Dec 2027", "avg_price": 845000, "land": "11.4 acres", "tenure": "Freehold", "dl": "DL 2025/0912", "apdl": "APDL 2025/2288 (valid to 30 Jun 2027)", "blocks": [["Phase 1", 40, 31], ["Phase 2", 46, 21]], "prices": [["4R3B terrace", "2,150 sq ft", "RM 780,000 – 920,000"], ["4R4B corner", "2,480 sq ft", "RM 960,000 – 1,120,000"]], "team": [["Fadilah Ismail", "Internal agent", 14], ["Nurul Izzah", "Internal agent", 8]], "activity": [["18 Sep 2026", "C-08-02 locked — Ravi Kumar (48-hour hold)"], ["15 Sep 2026", "Phase 2 bumi release approved for 6 units"], ["02 Sep 2026", "Frame completed — phase 1 (milestone certified)"]]}, {"slug": "allamanda-saujana-klia", "name": "Allamanda Saujana KLIA", "type": "Serviced", "location": "Sepang, Selangor", "storeys": "12 storeys", "units": 48, "sold": 41, "reserved": 4, "launch": "Sep 2025", "completion": "Jun 2027", "avg_price": 712000, "land": "2.1 acres", "tenure": "Leasehold (99 years)", "dl": "DL 2025/0344", "apdl": "APDL 2025/0771 (valid to 30 Sep 2026)", "blocks": [["Tower 1", 48, 41]], "prices": [["Studio", "560 sq ft", "RM 648,000 – 690,000"], ["3R2B", "1,110 sq ft", "RM 812,000 – 880,000"]], "team": [["Aina Zulkifli", "COA partner", 10], ["Kumar Raj", "COA partner", 7]], "activity": [["17 Sep 2026", "D-02-07 EOI received — Fatin Amira"], ["08 Sep 2026", "Tower 1 topping-up certified"], ["29 Aug 2026", "Bumi quota fulfilled — 4 units released"]]}, {"slug": "senna-presint-12", "name": "Senna Presint 12", "type": "High-Rise", "location": "Putrajaya", "storeys": "25 storeys", "units": 200, "sold": 45, "reserved": 18, "launch": "Jun 2026", "completion": "Mar 2030", "avg_price": 742000, "land": "5.6 acres", "tenure": "Freehold", "dl": "DL 2026/0788", "apdl": "APDL 2026/1509 (valid to 31 Dec 2028)", "blocks": [["Block A", 100, 24], ["Block B", 100, 21]], "prices": [["3R2B", "1,140 sq ft", "RM 520,000 – 610,000"], ["4R3B", "1,480 sq ft", "RM 880,000 – 980,000"]], "team": [["Aina Zulkifli", "COA partner", 8], ["Nurul Izzah", "Internal agent", 5]], "activity": [["16 Sep 2026", "A-09-07 loan submitted — Siti Nurhaliza (Maybank)"], ["10 Sep 2026", "Launch weekend: 22 EOIs captured"], ["28 Aug 2026", "Show unit opened for viewing"]]}, {"slug": "astana-residence-p8", "name": "Astana Residence P8", "type": "Landed", "location": "Cyberjaya, Selangor", "storeys": "Semi-D", "units": 32, "sold": 28, "reserved": 2, "launch": "Jan 2025", "completion": "Sep 2026", "avg_price": 1480000, "land": "6.8 acres", "tenure": "Freehold", "dl": "DL 2024/1122", "apdl": "APDL 2024/2011 (expired — renewal in progress)", "blocks": [["Phase 1", 20, 20], ["Phase 2", 12, 8]], "prices": [["Semi-D 40×80", "3,200 sq ft", "RM 1,280,000 – 1,480,000"], ["Semi-D 45×90", "3,600 sq ft", "RM 1,520,000 – 1,820,000"]], "team": [["Fadilah Ismail", "Internal agent", 11], ["Hafiz Rahman", "COA partner", 6]], "activity": [["14 Sep 2026", "Phase 1 vacant possession inspection scheduled"], ["30 Aug 2026", "APDL renewal submitted (expiry risk flagged)"], ["12 Jul 2026", "CCC application lodged"]], "risk": "APDL expired — new bookings blocked until renewal is approved (Regulation 6)."}, {"slug": "terra-residences", "name": "Terra Residences", "type": "High-Rise", "location": "Kajang, Selangor", "storeys": "15 storeys", "units": 42, "sold": 36, "reserved": 3, "launch": "Jul 2025", "completion": "Jun 2027", "avg_price": 668000, "land": "2.9 acres", "tenure": "Freehold", "dl": "DL 2025/0219", "apdl": "APDL 2025/0618 (valid to 31 Mar 2027)", "blocks": [["Block A", 42, 36]], "prices": [["3R2B", "1,060 sq ft", "RM 600,000 – 690,000"], ["3R3B", "1,240 sq ft", "RM 720,000 – 900,000"]], "team": [["Aina Zulkifli", "COA partner", 9], ["Fadilah Ismail", "Internal agent", 7]], "activity": [["19 Sep 2026", "E-11-05 locked — hold expires in 24 hours"], ["06 Sep 2026", "Windows &amp; doors installation 48% complete"], ["21 Aug 2026", "Bumi release approved — 3 units"]]}];
+function fmt(n){ return 'RM ' + Number(n).toLocaleString('en-MY'); }
+function el(id, html){ var e = document.getElementById(id); if (e) e.innerHTML = html; }
+function kv(rows){ return rows.map(function(r){
+  return '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'; }).join(''); }
+
+function render(){
+  var slug = new URLSearchParams(location.search).get('p') || PROJECTS[0].slug;
+  var p = PROJECTS.filter(function(x){ return x.slug === slug; })[0] || PROJECTS[0];
+  var soldPct = Math.round(p.sold / p.units * 100);
+  var value = p.sold * p.avg_price;
+
+  document.title = 'Zentra Launch — ' + p.name;
+  el('crumb', '<a class="back" href="projects.html">&larr; All projects</a> · <span>' + p.name + '</span>');
+  el('title', p.name);
+  el('sub', p.type + ' · ' + p.location + ' · ' + p.storeys + ' · ' + p.units + ' units');
+  el('chips', PROJECTS.map(function(x){
+    return '<a class="chip' + (x.slug === p.slug ? ' on' : '') + '" href="project.html?p=' + x.slug + '">' + x.name + '</a>';
+  }).join(''));
+  el('risk', p.risk ? '<div class="banner" style="border-color:rgba(232,119,106,.35);color:var(--danger)">⚠️ ' + p.risk + '</div>' : '');
+  el('stats',
+    '<div class="stat-card"><div class="value">' + p.units + '</div><div class="label">Total units</div><div class="trend up">' + p.blocks.length + ' block(s)</div></div>' +
+    '<div class="stat-card"><div class="value">' + p.sold + '</div><div class="label">Sold</div><div class="trend up">' + soldPct + '% take-up</div></div>' +
+    '<div class="stat-card"><div class="value">' + p.reserved + '</div><div class="label">Reserved / locked</div><div class="trend down">locks expire in 48h</div></div>' +
+    '<div class="stat-card"><div class="value">' + fmt(value).replace('RM ', 'RM ') + '</div><div class="label">Sales value (booked)</div><div class="trend up">avg ' + fmt(p.avg_price) + '</div></div>');
+  el('spec', kv([
+    ['Project', p.name], ['Type', p.type], ['Location', p.location], ['Land area', p.land],
+    ['Tenure', p.tenure], ['Launch', p.launch], ['Est. completion', p.completion],
+    ['Development licence', p.dl], ['Advertising &amp; selling permit', p.apdl],
+    ['Buyer microsite (publish path)', 'launch.zentrapropertygroup.com/' + p.slug],
+    ['Payment route', 'Developer\u2019s Housing Development Account (HDA 1966 s.7A), or the solicitor\u2019s client account per SPA']
+  ]));
+  el('blocks', '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Block / phase</th><th>Units</th><th>Sold</th><th>Take-up</th><th></th></tr></thead><tbody>' +
+    p.blocks.map(function(b){
+      var pct = Math.round(b[2] / b[1] * 100);
+      return '<tr><td class="strong" data-label="Block / phase">' + b[0] + '</td><td class="num" data-label="Units">' + b[1] + '</td><td class="num" data-label="Sold">' + b[2] + '</td><td class="num gold" data-label="Take-up">' + pct + '%</td>' +
+             '<td data-label=""><a class="back" href="inventory.html">Open grid &rarr;</a></td></tr>';
+    }).join('') + '</tbody></table></div>');
+  el('prices', '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Unit type</th><th>Built-up</th><th>Price range</th></tr></thead><tbody>' +
+    p.prices.map(function(r){ return '<tr><td class="strong" data-label="Unit type">' + r[0] + '</td><td data-label="Built-up">' + r[1] + '</td><td class="num gold" data-label="Price range">' + r[2] + '</td></tr>'; }).join('') +
+    '</tbody></table></div>');
+  el('team', '<div class="activity-list">' + p.team.map(function(t){
+      return '<div class="activity-item"><div class="act-body"><div class="act-title">' + t[0] + '</div>' +
+             '<div class="act-meta">' + t[1] + '</div></div><div class="act-amount">' + t[2] + ' bookings</div></div>';
+    }).join('') + '</div>');
+  el('activity', '<div class="activity-list">' + p.activity.map(function(a){
+      return '<div class="activity-item"><div class="act-body"><div class="act-title">' + a[1] + '</div>' +
+             '<div class="act-meta">' + a[0] + '</div></div></div>';
+    }).join('') + '</div>');
+  el('links',
+    '<a class="btn btn-gold" href="inventory.html">Unit inventory</a> ' +
+    '<a class="btn" href="sales.html">Sales board</a> ' +
+    '<a class="btn btn-ghost" href="buyer/index.html">Buyer portal preview &rarr;</a>');
+}
+render();
+</script>
+
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
