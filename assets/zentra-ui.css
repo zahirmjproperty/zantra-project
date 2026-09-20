@@ -1,0 +1,168 @@
+/* ============================================================================
+   ZENTRA UI LAYER — v20260920
+   Dipasang oleh ~/.hermes/scripts/pasang_lapisan_ui.py ke setiap mockup Zentra.
+   Setiap peraturan di bawah membetulkan kecacatan NYATA yang dilaporkan/dijumpai
+   sepanjang 19-20 Sep 2026. Jangan edit salinan dalam mockup — edit fail sumber ini
+   dalam ~/.hermes/scripts/zentra-ui.css kemudian jalankan semula alat pemasang.
+
+   K1 bukan CSS (lapisan tindakan demo ada dalam zentra-ui.js)
+   K2 kontras teks .flag  → bahagian 4
+   K3 medan textarea      → bahagian 3
+   K4 panel lut sinar     → bahagian 2
+   K5 jadual mudah alih   → bahagian 1
+   K6 header bertindih    → bahagian 6
+   ========================================================================== */
+
+/* --- 1. JADUAL BERLABEL → KAD PADA TELEFON ---------------------------------
+   Punca: jadual 4-8 lajur pada skrin 390-430px → lajur kanan terpotong
+   (PAI…, NEGOTIAT…, EXPECTED RELE…, ACTION…). Label datang daripada shim JS
+   (data-label). Jadual ditanda .zr-kad HANYA selepas berjaya dilabel, jadi jika
+   JS gagal ia kekal jadual biasa. */
+@media (max-width: 820px) {
+  table.zr-kad { display: block; width: 100%; font-size: 13px; }
+  table.zr-kad thead,
+  table.zr-kad tr.zr-hdr { display: none; }
+  table.zr-kad tbody,
+  table.zr-kad tr,
+  table.zr-kad td { display: block; width: 100%; }
+  table.zr-kad tr {
+    border: 1px solid var(--line, rgba(255, 255, 255, .10));
+    border-radius: 12px; padding: 10px 12px; margin: 0 0 10px;
+    background: rgba(255, 255, 255, .02);
+  }
+  table.zr-kad td {
+    border: 0; padding: 5px 0; display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 12px; text-align: right;
+  }
+  table.zr-kad td::before {
+    content: attr(data-label); flex: 0 0 auto; text-align: left;
+    color: var(--gold, #C9A227); font-size: 10px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+  }
+  table.zr-kad td:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    padding-bottom: 8px; margin-bottom: 6px; font-size: 13.5px; font-weight: 700;
+  }
+  table.zr-kad td:first-child::before { content: none; }
+  /* jadual yang tidak dapat dilabel: kekal boleh skrol di dalam kadnya */
+  .card, .card-bd, .panel { overflow-x: auto; }
+  /* jadual yang tidak dapat dilabel (tiada <th>): JS membalutnya dlm .zr-scroll
+     supaya ia boleh skrol di dalam kotaknya dan TIDAK melebarkan halaman */
+  .zr-scroll { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; border-radius: 10px; }
+  /* senarai kunci-nilai: nilai panjang tidak boleh melebarkan kad */
+  .kv .row, .kv .row .k, .kv .row .v { min-width: 0; }
+  .kv .row .v { overflow-wrap: anywhere; }
+  /* cip/badge kecil tidak boleh melebihi bekasnya */
+  .badge, .pill, .chip { max-width: 100%; }
+  /* bekas asas tidak boleh mempunyai lebar minimum tetap (POC 640px) */
+  body, .wrap, .shell, .page, .container { min-width: 0 !important; }
+  /* label/penanda teks pendek tidak boleh nowrap memaksa limpahan;
+     badge tidak boleh dipaksa mengecil oleh tajuk di sebelahnya */
+  span.k, span.rec, .kv .row .k { white-space: normal !important; overflow-wrap: anywhere; }
+  .badge, .pill, .chip, .rec { flex: 0 0 auto; }
+  .q, .opts, .q > *, .opts > * { min-width: 0; }
+  span.more, .more, .badge, .pill { white-space: normal; overflow-wrap: anywhere; }
+
+
+
+  /* cip & teks panjang tidak boleh memaksa skrol sisi */
+  .chip, .chip * { white-space: normal !important; max-width: 100%; overflow-wrap: anywhere; }
+  .led td, .led th { overflow-wrap: anywhere; }
+
+  /* grid → satu lajur (elak lajur min-content melebihi bekas) */
+  .grid, .g2, .g3, .g4, [class*="grid"] { grid-template-columns: minmax(0, 1fr) !important; }
+
+  /* asas: tiada elemen melebihi skrin */
+  .main, .content, .wrap, .shell { min-width: 0; max-width: 100%; }
+  li, p, td, th, h1, h2, h3 { overflow-wrap: anywhere; }
+  body { overflow-x: hidden; }
+}
+
+/* --- 2. PANEL LUT SINAR → LEGAP --------------------------------------------
+   Punca: .drawer/.modal mempunyai background rgba(255,255,255,.04) — 4% legap
+   TANPA blur → kandungan halaman menembusi panel (notifikasi bercampur dgn
+   halaman). Kini legap + garis emas + bayang. */
+.drawer, .modal .inner, .sheet {
+  background-image: linear-gradient(180deg, #16304A 0%, #0F2438 100%) !important;
+  border-left: 1px solid rgba(201, 162, 39, .28);
+  box-shadow: -24px 0 60px rgba(0, 0, 0, .5);
+  z-index: 95;
+}
+:root.theme-light .drawer,
+:root.theme-light .modal .inner,
+:root.theme-light .sheet {
+  background-image: none !important; background: #fff !important;
+  border-left-color: rgba(138, 100, 24, .20);
+}
+/* skrim sebenar (kawasan ketuk untuk tutup, seluruh skrin) */
+.nscrim {
+  position: fixed; inset: 0; z-index: 88; display: none;
+  background: rgba(4, 10, 20, .55);
+}
+.nscrim.on { display: block; }
+/* butang tutup panel */
+.dclose {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 10px; cursor: pointer;
+  border: 1px solid rgba(201, 162, 39, .35); background: rgba(201, 162, 39, .08);
+  color: #e8ce86; font-size: 15px; line-height: 1;
+}
+.dclose:hover { background: rgba(201, 162, 39, .16); }
+.dclosebar {
+  position: sticky; bottom: 0; width: 100%; padding: 13px; cursor: pointer;
+  border: 0; border-top: 1px solid rgba(201, 162, 39, .18);
+  background: linear-gradient(180deg, rgba(11, 27, 46, 0), #0B1B2E 34%);
+  color: #e8ce86; font: inherit; font-size: 13px; font-weight: 700;
+}
+body.drawer-open { overflow: hidden; }
+
+/* --- 3. MEDAN TEXTAREA SEPADAN DENGAN INPUT --------------------------------
+   Punca: peraturan medan berbunyi `input.i, select.i { … }` — textarea tidak
+   disertakan, jadi ia jatuh ke gaya lalai pelayar (latar putih, kecil). */
+textarea.i, textarea.inp, textarea.input, .field textarea, .fld textarea {
+  width: 100%; padding: 10px 11px; border-radius: 10px; min-height: 96px;
+  font: inherit; font-size: 14px; line-height: 1.55; resize: vertical;
+  background: rgba(255, 255, 255, .04); border: 1px solid rgba(201, 162, 39, .22);
+  color: #f0ead6;
+}
+textarea.i:focus, textarea.inp:focus, .field textarea:focus {
+  outline: 2px solid rgba(201, 162, 39, .22); border-color: #C9A227;
+}
+:root.theme-light textarea.i, :root.theme-light .field textarea {
+  background: #fff; color: #1e293b; border-color: rgba(138, 100, 24, .22);
+}
+/* label mendapat barisnya sendiri — elak teks membalut di sisi medan */
+.field label, .fld label { display: block; margin-bottom: 6px; }
+
+/* --- 4. KOTAK .flag: KONTRAS TEMA GELAP ------------------------------------
+   Punca: .flag{background:var(--gold-soft); color:#1a1206} — direka sebagai
+   panel emas MUDA, tetapi --gold-soft dalam tema gelap ialah tint gelap →
+   teks hampir hitam atas panel gelap (nisbah ~1.2:1, halimunan). */
+.flag { color: var(--ink, #f0ead6); background: rgba(201, 162, 39, .10); border-color: rgba(201, 162, 39, .32); }
+.flag b, .flag strong { color: #e8ce86; }
+:root.theme-light .flag {
+  color: #1a1206; background: rgba(138, 100, 24, .10); border-color: rgba(138, 100, 24, .30);
+}
+:root.theme-light .flag b, :root.theme-light .flag strong { color: #6b4f10; }
+
+/* --- 5. TOAST TINDAKAN DEMO ------------------------------------------------ */
+.dtoast {
+  position: fixed; left: 50%; bottom: 18px; z-index: 120; width: min(92vw, 470px);
+  transform: translateX(-50%) translateY(130%); opacity: 0; pointer-events: none;
+  padding: 13px 15px; border-radius: 14px; color: #f0ead6; font-size: 12.5px; line-height: 1.5;
+  background: linear-gradient(180deg, #16304A 0%, #0F2438 100%);
+  border: 1px solid rgba(201, 162, 39, .35); box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+  transition: transform .28s ease, opacity .28s ease;
+}
+.dtoast.on { transform: translateX(-50%) translateY(0); opacity: 1; pointer-events: auto; }
+.dtoast b { display: block; margin-bottom: 4px; color: #e8ce86; font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; }
+.dtoast i { display: block; margin-top: 6px; color: #94a3b8; font-size: 11px; font-style: normal; }
+.dtoast a { display: inline-block; margin-top: 8px; color: #e8ce86; font-weight: 700; text-decoration: none; }
+:root.theme-light .dtoast { background: #fff; color: #1e293b; border-color: rgba(138, 100, 24, .30); }
+:root.theme-light .dtoast b, :root.theme-light .dtoast a { color: #8a6418; }
+:root.theme-light .dtoast i { color: #64748b; }
+
+/* --- 6. BAR NOTIS TIDAK DI BAWAH BUTANG LOCENG ----------------------------- */
+@media (max-width: 820px) {
+  .ctxbar, .notice, .topbar-note { padding-right: 68px; }
+}
