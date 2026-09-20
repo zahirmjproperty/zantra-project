@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Launch — Guide</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search the guide..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="banner">REVIEW GUIDE — read this before signing off the mock-up. Answer the 10 questions, choose the 6
+      decisions, then copy the summary at the bottom and send it back. Nothing here is production: every screen is a
+      design proposal with sample data.</div>
+
+    <div class="card" style="border-color:rgba(201,162,39,.45)"><div class="card-hd"><h2>Decisions received — 19 Sep 2026</h2>
+      <span class="more">from Zahir</span></div>
+      <div class="card-bd">
+        <div class="kv">
+          <div class="row"><span class="k">A · Phase 1 scope</span><span class="v">Admin console first</span></div>
+          <div class="row"><span class="k">B · Source of truth</span><span class="v">Zentra Launch is the system of record; Notion becomes a read-only archive</span></div>
+          <div class="row"><span class="k">C · Payment collection</span><span class="v">Transfer / cheque to the developer's Housing Development Account, or the solicitor's client account</span></div>
+          <div class="row"><span class="k">D · Buyer identity</span><span class="v">Zentra ID (Zentra Portal, Supabase)</span></div>
+          <div class="row"><span class="k">E · Public microsite</span><span class="v">launch.zentrapropertygroup.com</span></div>
+          <div class="row"><span class="k">F · Launch timing</span><span class="v">After the Zentra Property Group cutover</span></div>
+        </div>
+        <div class="note" style="margin-top:14px"><b>B changes the plan:</b> before F1 can go live the Notion record
+          must be imported once and then frozen — <b>one writer only</b> (Zentra Launch). Import, freeze and cut-over
+          are now part of the F1 scope; until the freeze, Notion stays authoritative for existing records.</div>
+        <div class="note"><b>C changes the design:</b> Zentra Launch becomes
+          <b>record-only</b> for money — it issues payment instructions, records slips that buyers upload, and tracks the
+          balance. The system never holds client funds (and no e-wallet or card collection). The buyer portal and the
+          admin billing screens have been updated to show the developer's Housing Development Account route.</div>
+      </div></div>
+
+    <div class="card"><div class="card-hd"><h2>Review answers — 19 Sep 2026</h2><span class="more">10 of 10</span></div>
+      <div class="card-bd">
+        <div class="table-wrap"><table class="dash-table">
+          <thead><tr><th>#</th><th>Question</th><th>Answer</th></tr></thead>
+          <tbody>
+            <tr><td class="strong" data-label="#">1</td><td data-label="Question">Booking flow</td><td data-label="Answer">Yes — as designed: EOI → 48-hour lock → booking 10% → SPA within 14 days</td></tr>
+            <tr><td class="strong" data-label="#">2</td><td data-label="Question">Lock rules</td><td data-label="Answer">Yes — 48 hours, warning 2 hours before expiry, max 2 units per buyer</td></tr>
+            <tr><td class="strong" data-label="#">3</td><td data-label="Question">Unit ID scheme</td><td data-label="Answer">Yes — A-12-03 (Block–Level–Unit)</td></tr>
+            <tr><td class="strong" data-label="#">4</td><td data-label="Question">Progressive billing</td><td data-label="Answer">Yes — Third Schedule 10-10-15-10-10-15-10-5-5-10, invoiced only after architect/engineer certification</td></tr>
+            <tr><td class="strong" data-label="#">5</td><td data-label="Question">Commission release</td><td data-label="Answer"><b>Needs change</b> — released once, 100% after end-financing disbursement (or full cash settlement); nothing on booking or SPA</td></tr>
+            <tr><td class="strong" data-label="#">6</td><td data-label="Question">Buyer portal status</td><td data-label="Answer">Yes — full stage names (EOI, Unit Locked, Booked, SPA Signed, Loan, Progressive, VP)</td></tr>
+            <tr><td class="strong" data-label="#">7</td><td data-label="Question">Wet ink vs e-signature</td><td data-label="Answer">Yes — SPA and land instruments wet ink; other client documents e-signed</td></tr>
+            <tr><td class="strong" data-label="#">8</td><td data-label="Question">Agent visibility</td><td data-label="Answer">Yes — own leads, locks and commission only</td></tr>
+            <tr><td class="strong" data-label="#">9</td><td data-label="Question">Discount policy</td><td data-label="Answer"><b>Needs change</b> — no discounts; only the published launch packages</td></tr>
+            <tr><td class="strong" data-label="#">10</td><td data-label="Question">Bumi quota</td><td data-label="Answer">Yes — the system holds bumi units until the release date</td></tr>
+          </tbody></table></div>
+        <div class="note" style="margin-top:12px">Two answers changed the design: <b>commission is now a single
+          release after disbursement</b> (the booking/SPA triggers are removed) and <b>discounts are off</b> except for
+          the published launch packages. Both are now reflected in Settings, Commission and the Phase 1 plan
+          (W3 record-only collection, W2 discount field locked).</div>
+      </div></div>
+
+    <div class="card"><div class="card-hd"><h2>How to use this guide</h2><span class="more">3 steps</span></div>
+      <div class="card-bd">
+        <div class="activity-list">
+          <div class="activity-item"><div class="act-body"><div class="act-title">1 · Walk the screens</div>
+            <div class="act-meta">Open the preview map below — 14 screens: admin console, drill-down pages and the buyer portal.</div></div></div>
+          <div class="activity-item"><div class="act-body"><div class="act-title">2 · Answer the 10 questions</div>
+            <div class="act-meta">Tick <b>Yes</b>, <b>Needs change</b> or <b>Discuss</b>. Add a note where something must change.</div></div></div>
+          <div class="activity-item"><div class="act-body"><div class="act-title">3 · Choose the 6 decisions</div>
+            <div class="act-meta">Each decision has a recommended option. The summary updates as you choose — copy it and send it back.</div></div></div>
+        </div>
+        <div class="chips" style="margin-top:14px"><a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/index.html">Dashboard</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/projects.html">Projects</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/inventory.html">Inventory</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/leads.html">Leads</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/sales.html">Sales</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/commission.html">Commission</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/billing.html">Billing</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/settings.html">Settings</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/project.html?p=avalon-cybersouth">Project detail</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/unit.html?u=A-12-03">Unit detail</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/buyer/index.html">My Booking</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/buyer/payments.html">Payments</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/buyer/progress.html">Progress</a> <a class="chip" href="https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/buyer/documents.html">Documents</a></div>
+      </div></div>
+
+    <div class="split">
+      <div>
+        <div class="card"><div class="card-hd"><h2>10 review questions</h2><span class="more">operation</span></div>
+          <div class="card-bd">
+<div class="q"><div class="qt"><span class="qn">1</span> <b>Booking flow</b></div><div class="qtxt">The flow runs EOI &rarr; 48-hour unit lock &rarr; 10% booking &rarr; SPA within 14 days. Does this match how our launches actually run on the ground?</div><div class="opts"><label class="opt"><input type="radio" name="q1" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q1" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q1" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q1" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">2</span> <b>Lock rules</b></div><div class="qtxt">A lock lasts 48 hours, extends once with a manager override, warns 2 hours before expiry, and caps a buyer at 2 units. Are these the right numbers?</div><div class="opts"><label class="opt"><input type="radio" name="q2" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q2" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q2" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q2" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">3</span> <b>Unit numbering</b></div><div class="qtxt">Units are identified as Block-Level-Unit (A-12-03). Does this match the developer's own unit numbering, or do we follow the developer's scheme per project?</div><div class="opts"><label class="opt"><input type="radio" name="q3" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q3" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q3" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q3" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">4</span> <b>Progressive billing</b></div><div class="qtxt">Billing follows the Third Schedule of the HDA (10/10/15/10/10/15/10/5/5/10) and is issued only after architect or engineer certification. Correct for our projects?</div><div class="opts"><label class="opt"><input type="radio" name="q4" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q4" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q4" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q4" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">5</span> <b>Commission release</b></div><div class="qtxt">Agent commission releases 30% on booking, 40% on SPA signature and 30% when the loan is disbursed; co-agency splits 50:50. Correct, or is the pattern different for COA partners?</div><div class="opts"><label class="opt"><input type="radio" name="q5" value="Yes — as designed"> Yes — as designed</label><label class="opt"><input type="radio" name="q5" value="Needs change" checked> Needs change</label><label class="opt"><input type="radio" name="q5" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q5" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">6</span> <b>Buyer visibility</b></div><div class="qtxt">The buyer portal shows full stage names (EOI, locked, booked, SPA signed, loan, progressive, vacant possession). Should buyers see every stage name, or simplified milestones?</div><div class="opts"><label class="opt"><input type="radio" name="q6" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q6" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q6" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q6" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">7</span> <b>Wet ink vs e-signature</b></div><div class="qtxt">Under the ECA 2006, land instruments still need wet ink or a registered digital signature. Which documents in this set must stay wet ink?</div><div class="opts"><label class="opt"><input type="radio" name="q7" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q7" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q7" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q7" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">8</span> <b>Role visibility</b></div><div class="qtxt">Agents see their own buyers, bookings and commission. The internal team sees price history, discounts and margins. Is that the right line?</div><div class="opts"><label class="opt"><input type="radio" name="q8" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q8" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q8" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q8" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">9</span> <b>Discount control</b></div><div class="qtxt">Discounts are recorded per unit with an approval trail. Who may approve a discount, and up to what percentage before it needs Zahir?</div><div class="opts"><label class="opt"><input type="radio" name="q9" value="Yes — as designed"> Yes — as designed</label><label class="opt"><input type="radio" name="q9" value="Needs change" checked> Needs change</label><label class="opt"><input type="radio" name="q9" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q9" placeholder="Note (optional) — what should change?"></div>
+<div class="q"><div class="qt"><span class="qn">10</span> <b>Bumi quota</b></div><div class="qtxt">The system tracks bumi units, release approvals and reporting. How strict should enforcement be when the quota is not yet met?</div><div class="opts"><label class="opt"><input type="radio" name="q10" value="Yes — as designed" checked> Yes — as designed</label><label class="opt"><input type="radio" name="q10" value="Needs change"> Needs change</label><label class="opt"><input type="radio" name="q10" value="Discuss"> Discuss</label></div><input class="notein" type="text" id="n-q10" placeholder="Note (optional) — what should change?"></div>
+          </div></div>
+
+        <div class="card"><div class="card-hd"><h2>6 decisions needed</h2><span class="more">phase 1</span></div>
+          <div class="card-bd">
+<div class="q"><div class="qt"><span class="qn">A</span> <b>Phase 1 scope</b></div><div class="opts"><label class="opt"><input type="radio" name="d1" value="Admin console first (projects, inventory, locks, bookings, billing) — buyer portal in Phase 2" checked> Admin console first (projects, inventory, locks, bookings, billing) — buyer portal in Phase 2 <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d1" value="Admin console and buyer portal together"> Admin console and buyer portal together</label>
+<label class="opt"><input type="radio" name="d1" value="Buyer portal first, admin console follows"> Buyer portal first, admin console follows</label></div></div>
+<div class="q"><div class="qt"><span class="qn">B</span> <b>Source of truth (waiting for explanation)</b></div><div class="opts"><label class="opt"><input type="radio" name="d2" value="Notion 'Projek Baharu MT' stays the source of truth; Zentra Launch syncs from it"> Notion 'Projek Baharu MT' stays the source of truth; Zentra Launch syncs from it <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d2" value="Build a Zentra Launch database; Notion becomes a read-only archive" checked> Build a Zentra Launch database; Notion becomes a read-only archive</label>
+<label class="opt"><input type="radio" name="d2" value="Keep both in parallel and reconcile manually"> Keep both in parallel and reconcile manually</label>
+<label class="opt"><input type="radio" name="d2" value="Explain the three options in detail before I decide"> Explain the three options in detail before I decide</label></div></div>
+<div class="q"><div class="qt"><span class="qn">C</span> <b>Payment collection</b></div><div class="opts"><label class="opt"><input type="radio" name="d3" value="Transfer / cheque into the developer's Housing Development Account (system is record-only)" checked> Transfer / cheque into the developer's Housing Development Account (system is record-only) <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d3" value="Transfer / cheque into the solicitor's client account for SPA-stage payments"> Transfer / cheque into the solicitor's client account for SPA-stage payments</label>
+<label class="opt"><input type="radio" name="d3" value="Billplz (FPX + cards) or DuitNow QR collected by the operator"> Billplz (FPX + cards) or DuitNow QR collected by the operator</label></div></div>
+<div class="q"><div class="qt"><span class="qn">D</span> <b>Buyer identity</b></div><div class="opts"><label class="opt"><input type="radio" name="d4" value="Reuse Zentra Portal accounts (Supabase) so a buyer has one Zentra ID" checked> Reuse Zentra Portal accounts (Supabase) so a buyer has one Zentra ID <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d4" value="Separate buyer accounts inside Zentra Launch"> Separate buyer accounts inside Zentra Launch</label>
+<label class="opt"><input type="radio" name="d4" value="Email link access with no account (lightest friction)"> Email link access with no account (lightest friction)</label></div></div>
+<div class="q"><div class="qt"><span class="qn">E</span> <b>Public microsite</b></div><div class="opts"><label class="opt"><input type="radio" name="d5" value="Publish under launch.zentrapropertygroup.com (one path per project)" checked> Publish under launch.zentrapropertygroup.com (one path per project) <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d5" value="Publish project pages on mrtanah.com using the existing pipeline"> Publish project pages on mrtanah.com using the existing pipeline</label>
+<label class="opt"><input type="radio" name="d5" value="Keep it preview-only until the rebrand cutover"> Keep it preview-only until the rebrand cutover</label></div></div>
+<div class="q"><div class="qt"><span class="qn">F</span> <b>Launch timing</b></div><div class="opts"><label class="opt"><input type="radio" name="d6" value="After the Zentra Property Group cutover (one build, one switch)" checked> After the Zentra Property Group cutover (one build, one switch) <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d6" value="Before the cutover, keeping Mr Tanah branding internally"> Before the cutover, keeping Mr Tanah branding internally</label>
+<label class="opt"><input type="radio" name="d6" value="No date yet — decide after the decisions above"> No date yet — decide after the decisions above</label></div></div>
+          </div></div>
+
+        <div class="card"><div class="card-hd"><h2>Your summary</h2><span class="more">copy &amp; send</span></div>
+          <div class="card-bd">
+            <textarea id="sum" class="notein" style="min-height:260px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px"></textarea>
+            <div class="cta-row" style="margin-top:10px">
+              <button class="btn btn-gold" onclick="copySum()">Copy summary</button>
+              <span id="copied" style="font-size:12.5px;color:var(--text-muted)"></span>
+            </div>
+          </div></div>
+      </div>
+
+      <div>
+        <div class="card"><div class="card-hd"><h2>Regulatory guardrails</h2><span class="more">built in</span></div>
+          <div class="card-bd"><div class="act"><b>HDA 1966 — Third Schedule</b><span>Progressive billing percentages are fixed by statute; the system issues each milestone from the template, not from free-text amounts.</span></div>
+<div class="act"><b>HDA 1966 — Regulation 11(2)</b><span>No payment may be collected before the SPA is signed. The booking screen blocks payment collection until the SPA date is recorded.</span></div>
+<div class="act"><b>HDA 1966 — Regulation 6</b><span>A project may only be advertised with a valid developer licence (DL) and advertising &amp; selling permit (APDL). Missing fields keep the microsite out of Google.</span></div>
+<div class="act"><b>HIMS eSPA (KPKT)</b><span>From 1 January 2026 the SPA submission to HIMS expects accurate unit and buyer data — this is why the unit record is the core of the system.</span></div>
+<div class="act"><b>PDPA 2010</b><span>Buyer data is held as a data user/processor; retention, access control and breach duties apply. Buyer documents are access-controlled per buyer.</span></div>
+<div class="act"><b>e-Invoice (LHDN MyInvois)</b><span>Receipts and invoices are issued in the registered legal name (ZMJ Solutions) with TIN; the trade brand may appear alongside but cannot replace it.</span></div>
+<div class="act"><b>ECA 2006</b><span>E-signature is valid for most documents but not for land instruments, which need wet ink or a registered digital signature.</span></div>
+<div class="act"><b>Bumi quota</b><span>Bumi units, release approvals and reporting are recorded per project; releases follow the state authority's rules.</span></div></div></div>
+        <div class="card"><div class="card-hd"><h2>Roadmap after sign-off</h2><span class="more">estimate</span></div>
+          <div class="card-bd"><div class="table-wrap"><table class="dash-table"><thead><tr><th>Phase</th><th>Scope</th><th>Effort</th></tr></thead><tbody><tr><td class="strong" data-label="Phase">F0 · Mock-up (done)</td><td data-label="Scope">14 designed screens across admin console, drill-down and buyer portal — the basis for this review</td><td class="num gold" data-label="Effort">Complete</td></tr>
+<tr><td class="strong" data-label="Phase">F1 · Admin core</td><td data-label="Scope">Projects, phases and unit inventory; timed locks; bookings; progressive billing records; role access</td><td class="num gold" data-label="Effort">6–8 weeks (estimate)</td></tr>
+<tr><td class="strong" data-label="Phase">F1a · Move the record</td><td data-label="Scope">One-time import from Notion 'Projek Baharu MT', data check against the live site, then freeze Notion writes (decision B)</td><td class="num gold" data-label="Effort">1–2 weeks (estimate)</td></tr>
+<tr><td class="strong" data-label="Phase">F2 · Buyer portal</td><td data-label="Scope">Buyer sign-in, booking status, payments and receipts, documents, site progress</td><td class="num gold" data-label="Effort">3–4 weeks (estimate)</td></tr>
+<tr><td class="strong" data-label="Phase">F3 · Commission &amp; agents</td><td data-label="Scope">Release engine, agent ledger, agent view, reporting</td><td class="num gold" data-label="Effort">3–4 weeks (estimate)</td></tr>
+<tr><td class="strong" data-label="Phase">F4 · Channels &amp; statutory</td><td data-label="Scope">Public microsite, e-invoice automation, eSPA/HIMS submission pack</td><td class="num gold" data-label="Effort">After F1–F3</td></tr></tbody></table></div>
+            <div style="font-size:12.5px;color:var(--text-muted);margin-top:10px">
+              Effort figures are working estimates; they are confirmed after the 6 decisions are made.</div>
+          </div></div>
+      </div>
+    </div>
+
+<script>
+var QS = [["q1", "Booking flow"], ["q2", "Lock rules"], ["q3", "Unit numbering"], ["q4", "Progressive billing"], ["q5", "Commission release"], ["q6", "Buyer visibility"], ["q7", "Wet ink vs e-signature"], ["q8", "Role visibility"], ["q9", "Discount control"], ["q10", "Bumi quota"]];
+var DS = [["d1", "Phase 1 scope"], ["d2", "Source of truth (waiting for explanation)"], ["d3", "Payment collection"], ["d4", "Buyer identity"], ["d5", "Public microsite"], ["d6", "Launch timing"]];
+function val(name){
+  var e = document.querySelector('input[name="' + name + '"]:checked');
+  return e ? e.value : '(not answered)';
+}
+function note(id){
+  var e = document.getElementById(id);
+  return e && e.value.trim() ? e.value.trim() : '';
+}
+function build(){
+  var lines = ['ZENTRA LAUNCH — review summary', ''];
+  lines.push('REVIEW QUESTIONS');
+  QS.forEach(function(q, i){
+    var n = note('n-' + q[0]);
+    lines.push((i + 1) + '. ' + q[1] + ': ' + val(q[0]) + (n ? ' — ' + n : ''));
+  });
+  lines.push('');
+  lines.push('DECISIONS');
+  DS.forEach(function(d, i){
+    lines.push(String.fromCharCode(65 + i) + '. ' + d[1] + ': ' + val(d[0]));
+  });
+  lines.push('');
+  lines.push('Reviewed by: ____________________   Date: ____________');
+  return lines.join('\n');
+}
+function refresh(){ document.getElementById('sum').value = build(); }
+function copySum(){
+  var t = document.getElementById('sum');
+  t.select();
+  try {
+    navigator.clipboard.writeText(t.value).then(function(){
+      document.getElementById('copied').textContent = 'Copied — paste it back to Ali.';
+    }, function(){ document.getElementById('copied').textContent = 'Select the text above and copy manually.'; });
+  } catch (e) {
+    document.getElementById('copied').textContent = 'Select the text above and copy manually.';
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  refresh();
+  document.querySelectorAll('input[type=radio]').forEach(function(r){ r.addEventListener('change', refresh); });
+  document.querySelectorAll('input[type=text], textarea').forEach(function(t){ t.addEventListener('input', refresh); });
+});
+</script>
+
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
