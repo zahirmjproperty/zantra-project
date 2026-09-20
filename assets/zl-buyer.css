@@ -1,0 +1,124 @@
+/* ================================================================
+   ZENTRA LAUNCH — Buyer portal shell (mobile-first)
+   Navy #0b1b2e + Gold #c9a227 · Plus Jakarta Sans (diwarisi) 
+   Reka bentuk: satu lajur, maks 900px, tab boleh tatal pada telefon.
+   Fail ini berasingan daripada zl.css (admin) supaya tidak saling mengganggu.
+   ================================================================ */
+:root{
+  --navy:#0b1b2e; --navy-2:#122a45; --gold:#c9a227; --gold-2:#e0bb4a;
+  --page:#f4f6f9; --card:#ffffff; --ink:#152234; --ink-2:#5a6a80; --line:#e2e7ee;
+  --ok:#1e7a4b; --warn:#b7791f; --bad:#b23a34; --info:#1f5f8b;
+  --radius:14px; --shadow:0 1px 2px rgba(11,27,46,.06), 0 8px 24px rgba(11,27,46,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--page); color:var(--ink);
+  font:15px/1.6 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  -webkit-text-size-adjust:100%;
+}
+a{color:var(--navy-2)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 48px}
+
+/* --- preview banner --- */
+.pv{background:#0b1b2e;color:#f2d98a;font-size:11.5px;letter-spacing:.04em;text-align:center;padding:7px 12px}
+
+/* --- top bar --- */
+.topbar{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.topbar .inner{max-width:900px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.12em;font-size:13px}
+.brand .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--gold),#8a6b12);display:inline-block;flex:0 0 auto}
+.brand em{font-style:normal;color:var(--gold-2)}
+.topbar .spacer{margin-left:auto}
+.who{display:flex;align-items:center;gap:9px;font-size:12.5px;color:#cdd8e6}
+.who .av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#8a6b12);color:#20242c;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.who b{color:#fff;font-weight:600}
+
+/* --- tabs --- */
+.tabs{background:var(--navy-2)}
+.tabs .inner{max-width:900px;margin:0 auto;padding:0 8px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs .inner::-webkit-scrollbar{display:none}
+.tabs a{
+  color:#c2cfe0;text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap;
+  padding:11px 12px;border-bottom:2px solid transparent;
+}
+.tabs a.on{color:#fff;border-bottom-color:var(--gold)}
+
+/* --- headings --- */
+h1{font-size:22px;line-height:1.25;margin:20px 0 4px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--ink-2);font-size:13.5px;margin:0 0 18px}
+h2{font-size:15px;margin:0;font-weight:700}
+
+/* --- cards --- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+.card .hd{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.card .hd .more{margin-left:auto;font-size:12px;color:var(--ink-2);text-decoration:none}
+.card .bd{padding:14px 16px}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){ .grid.two{grid-template-columns:1fr 1fr} }
+
+/* --- stats --- */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+@media(min-width:700px){ .stats{grid-template-columns:repeat(4,1fr)} }
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:13px 14px;box-shadow:var(--shadow)}
+.stat .v{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.stat .v small{font-size:12px;color:var(--ink-2);font-weight:600}
+.stat .l{font-size:11.5px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+.stat .t{font-size:11.5px;margin-top:5px}
+.t.up{color:var(--ok)} .t.down{color:var(--warn)} .t.due{color:var(--bad)}
+
+/* --- stepper / timeline --- */
+.steps{list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding:0 0 16px 30px;border-left:2px solid var(--line)}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  content:"";position:absolute;left:-8px;top:2px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:2px solid var(--line);
+}
+.steps li.done::before{background:var(--ok);border-color:var(--ok)}
+.steps li.now::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.18)}
+.steps .st{font-weight:600;font-size:14px}
+.steps .mt{font-size:12.5px;color:var(--ink-2)}
+
+/* --- rows / documents --- */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.rows li:last-child{border-bottom:0}
+.rows .ic{width:34px;height:34px;border-radius:9px;background:#eef2f7;display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+.rows .tx{min-width:0}
+.rows .tx .a{font-weight:600;font-size:13.5px}
+.rows .tx .b{font-size:12px;color:var(--ink-2)}
+.rows .rt{margin-left:auto;text-align:right;flex:0 0 auto}
+
+/* --- badges --- */
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 8px;border-radius:999px;text-transform:uppercase}
+.b-ok{background:rgba(30,122,75,.12);color:var(--ok)}
+.b-due{background:rgba(183,121,31,.14);color:var(--warn)}
+.b-late{background:rgba(178,58,52,.12);color:var(--bad)}
+.b-info{background:rgba(31,95,139,.12);color:var(--info)}
+.b-gold{background:rgba(201,162,39,.16);color:#8a6b12}
+
+/* --- bars --- */
+.bar{margin:10px 0}
+.bar .bl{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
+.bar .bw{height:8px;background:#eaeef4;border-radius:999px;overflow:hidden}
+.bar .bf{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-2));border-radius:999px}
+
+/* --- buttons --- */
+.btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;
+     padding:10px 16px;border-radius:10px;border:0;cursor:pointer}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#a5821c);color:#1b1b1b}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+
+/* --- table (mobile: jadi blok) --- */
+.table-wrap{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.t td{padding:10px;border-bottom:1px solid var(--line)}
+table.t td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t tr:last-child td{border-bottom:0}
+
+/* --- notes --- */
+.note{font-size:12.5px;color:var(--ink-2);background:#f7f9fc;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:10px 12px;margin-top:12px}
+.foot{font-size:11.5px;color:var(--ink-2);text-align:center;padding:22px 16px 30px}
