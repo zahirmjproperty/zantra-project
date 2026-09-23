@@ -1,11 +1,11 @@
-# Zentra Launch
+# Zantra Project
 
 New-launch sales system for property developers — Zentra Property Group.
 
-- **Host:** https://launch.zentrapropertygroup.com
+- **Host:** https://project.zentrapropertygroup.com
 - **Status:** Phase 1 (environment). Deployment is phased; no application modules are live yet.
 - **Visibility:** internal system, `noindex` until approved for public discovery.
-- **Interactive preview:** https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/
+- **Interactive preview:** https://zahirmjproperty.github.io/mockup-hartanah/zantra-project/
 
 ## What the system covers
 
@@ -24,7 +24,7 @@ New-launch sales system for property developers — Zentra Property Group.
 | Layer | Name |
 |---|---|
 | Client-facing brand | Zentra Property Group |
-| System | **Zentra Launch** (decided by Zahir, 19 September 2026) |
+| System | **Zantra Project** (decided by Zahir, 19 September 2026) |
 | Previous working names | Zentra Sales Suite · Zentra Build *(now reserved for the ZPG construction arm)* |
 | Internal operator | Mr Tanah |
 
@@ -47,7 +47,7 @@ New-launch sales system for property developers — Zentra Property Group.
 | Mr Tanah — public property listings | `mrtanah.com` |
 | Zahir MJ Property | `zahirmjproperty.com` |
 
-Zentra Launch is a **separate** system. Mr Tanah/ZMP remain listings-only.
+Zantra Project is a **separate** system. Mr Tanah/ZMP remain listings-only.
 
 ## Deployment
 
