@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""_gen_launch.py — penjana set penuh mock-up ZENTRA LAUNCH (Zentra Property Group).
+"""_gen_project.py — penjana set penuh mock-up ZANTRA PROJECT (Zentra Property Group).
 
 Hasil: 8 halaman dalam ~/mockup-hartanah/zentra-launch/
   index.html · projects.html · inventory.html · leads.html · sales.html · commission.html · billing.html · settings.html
@@ -12,7 +12,7 @@ blok sidebar + header supaya nav seragam, dan membetulkan sisa jenama lama (ZB �
 import os
 import re
 
-OUT = "/home/ubuntu/mockup-hartanah/zentra-launch"
+OUT = "/home/ubuntu/mockup-hartanah/zantra-project"
 os.makedirs(OUT, exist_ok=True)
 
 ICON = {
@@ -62,7 +62,7 @@ def sidebar(active):
         '<div class="sidebar">\n'
         '  <div class="brand">\n'
         '    <span class="mark" aria-hidden="true"></span>\n'
-        '    <span class="wordmark">ZENTRA <em>LAUNCH</em></span>\n'
+        '    <span class="wordmark">ZANTRA <em>PROJECT</em></span>\n'
         '  </div>\n'
         '  <nav class="nav" aria-label="Main">\n    ' + "\n    ".join(links) + '\n  </nav>\n'
         '  <div class="user-foot">\n'
@@ -118,9 +118,9 @@ function toggleTheme() {
 def page(fname, title, body, title_block=True):
     """title_block=False → halaman bina kepala sendiri (tajuk dinamik melalui JS)."""
     nav = [n for n in NAV if n[0] == fname][0]
-    head_title = '<title>Zentra Launch — %s</title>\n' % title          # % pada literal tunggal sahaja
+    head_title = '<title>Zantra Project — %s</title>\n' % title          # % pada literal tunggal sahaja
     crumb = ('    <div class="page-title">\n      <h1>%s</h1>\n'
-             '      <div class="breadcrumb"><span>Zentra Launch</span> · <span>%s</span></div>\n    </div>\n'
+             '      <div class="breadcrumb"><span>Zantra Project</span> · <span>%s</span></div>\n    </div>\n'
              % (title, nav[4])) if title_block else ''
     html = (
         '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -312,7 +312,7 @@ billing = (
     ]))
     + card("Payment route — record only (decision 19 Sep 2026)", activities([
         ("Buyer pays into the developer's Housing Development Account",
-         "HDA 1966 s.7A — project account. Zentra Launch never holds client money", "record-only", "#C9A227"),
+         "HDA 1966 s.7A — project account. Zantra Project never holds client money", "record-only", "#C9A227"),
         ("Or into the solicitor's client account for SPA-stage payments",
          "Per the payment clause in the SPA — the system records what the solicitor confirms", "per SPA", "#1F5F8B"),
         ("Buyer uploads the bank-in slip or cheque copy",
@@ -357,12 +357,12 @@ settings_body = (
     '        <div class="form-group"><label>Invoice prefix</label><input type="text" value="INV-YYMM-" aria-label="Prefix"></div>\n'
     '        <div class="form-group"><label>Issuing entity (e-invoice)</label><input type="text" value="ZMJ Solutions (002093603-H) · TIN 202301234567" aria-label="Entity"></div>\n'
     '        <div class="form-group"><label>Late payment interest</label><select aria-label="Interest">' + opts(["10% p.a. (SPA standard)", "8% p.a.", "None"]) + '</select></div>\n'
-    '        <div class="form-group"><label>Payment route (per project — decision 19/9/2026)</label><select aria-label="Payment route">' + opts(["Developer's Housing Development Account (HDA 1966 s.7A) — record only by Zentra Launch", "Solicitor's client account (SPA-stage payments)", "Operator's own account (non-licensed project)"]) + '</select></div>\n'
+    '        <div class="form-group"><label>Payment route (per project — decision 19/9/2026)</label><select aria-label="Payment route">' + opts(["Developer's Housing Development Account (HDA 1966 s.7A) — record only by Zantra Project", "Solicitor's client account (SPA-stage payments)", "Operator's own account (non-licensed project)"]) + '</select></div>\n'
     '        <div class="form-group"><label>Buyer proof of payment</label><select aria-label="Proof">' + opts(["Upload bank-in slip / cheque copy — sales office reconciles (default)", "Record only, no upload", "Require bank confirmation letter"]) + '</select></div>\n'
-    '        <div class="form-group"><label>Online collection (card / e-wallet / QR)</label><select aria-label="Collection">' + opts(["Disabled — Zentra Launch never holds client money (default)", "Enabled for non-licensed projects only"]) + '</select></div>\n'
+    '        <div class="form-group"><label>Online collection (card / e-wallet / QR)</label><select aria-label="Collection">' + opts(["Disabled — Zantra Project never holds client money (default)", "Enabled for non-licensed projects only"]) + '</select></div>\n'
     '      </div>\n    </div>\n'
     '    <div class="card">\n      <div class="card-hd"><h2>Data ownership — system of record</h2><span class="more">decision 19/9/2026</span></div>\n      <div class="card-bd">\n'
-    '        <div class="form-group"><label>System of record</label><select aria-label="System of record">' + opts(["Zentra Launch — from cutover (decision B)", "Notion 'Projek Baharu MT' — until freeze"]) + '</select></div>\n'
+    '        <div class="form-group"><label>System of record</label><select aria-label="System of record">' + opts(["Zantra Project — from cutover (decision B)", "Notion 'Projek Baharu MT' — until freeze"]) + '</select></div>\n'
     '        <div class="form-group"><label>Notion \'Projek Baharu MT\'</label><select aria-label="Notion role">' + opts(["Read-only archive after one-time import", "Still editable (pre-freeze)", "Retired"]) + '</select></div>\n'
     '        <div class="form-group"><label>Write lock on Notion fields</label><select aria-label="Write lock">' + opts(["Units, prices, locks and bookings (default)", "All fields", "None"]) + '</select></div>\n'
     '        <div class="form-group"><label>Import status</label><input type="text" value="Not started — scheduled in F1a (import → verify → freeze)" aria-label="Import"></div>\n'
@@ -377,7 +377,7 @@ settings_body = (
     '        <div class="form-group"><label>DL / APDL fields on public microsite</label><select aria-label="DL gate">' + opts(["Mandatory — page stays noindex if incomplete (default)", "Warning only"]) + '</select></div>\n'
     '        <div class="form-group"><label>eSPA / HIMS KPKT export</label><select aria-label="HIMS">' + opts(["Enabled (required from 1 Jan 2026)", "Disabled"]) + '</select></div>\n'
     '        <div class="form-group"><label>Record retention (PDPA)</label><select aria-label="Retention">' + opts(["7 years after vacant possession (default)", "7 years after handover + 1"]) + '</select></div>\n'
-    '        <div class="form-group"><label>Client-facing system name</label><input type="text" value="Zentra Launch" aria-label="Brand"></div>\n'
+    '        <div class="form-group"><label>Client-facing system name</label><input type="text" value="Zantra Project" aria-label="Brand"></div>\n'
     '      </div>\n    </div>\n'
 )
 settings = settings_body
@@ -407,7 +407,7 @@ def patch_existing():
         s = s.replace("localStorage.getItem('za-theme')", "localStorage.getItem('zl-theme')").replace("localStorage.setItem('za-theme'", "localStorage.setItem('zl-theme'")
         # notis punca kebenaran (keputusan B, 19/9/2026) — disisip sekali sahaja
         if fname == "index.html" and "System of record:" not in s:
-            notis = ('<div class="banner">System of record: <b>Zentra Launch</b>. '
+            notis = ('<div class="banner">System of record: <b>Zantra Project</b>. '
                      'Notion \'Projek Baharu MT\' becomes a read-only archive after the one-time import '
                      '(decision 19/9/2026).</div>\n    ')
             s = s.replace('<div class="content">\n', '<div class="content">\n    ' + notis, 1)

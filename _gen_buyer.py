@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""_gen_buyer.py — penjana BUYER PORTAL (versi pembeli) untuk mock-up ZENTRA LAUNCH.
+"""_gen_buyer.py — penjana BUYER PORTAL (versi pembeli) untuk mock-up ZANTRA PROJECT.
 
 Hasil: ~/mockup-hartanah/zentra-launch/buyer/{index,payments,progress,documents}.html
 Shell mudah alih (top bar + tab), bukan sidebar admin. English (US) — ini permukaan sistem.
@@ -8,7 +8,7 @@ Data contoh; noindex; jelas ditanda sebagai mock-up.
 """
 import os
 
-OUT = "/home/ubuntu/mockup-hartanah/zentra-launch/buyer"
+OUT = "/home/ubuntu/mockup-hartanah/zantra-project/buyer"
 os.makedirs(OUT, exist_ok=True)
 
 BUYER = "Ahmad Faiz"
@@ -21,16 +21,16 @@ PAID = 108900
 TABS = [("index.html", "My Booking"), ("payments.html", "Payments"),
         ("progress.html", "Progress"), ("documents.html", "Documents")]
 
-PV = ('<div class="pv">PREVIEW MOCK-UP — sample data · not a live system · Zentra Launch buyer portal</div>')
+PV = ('<div class="pv">PREVIEW MOCK-UP — sample data · not a live system · Zantra Project buyer portal</div>')
 
 
 def shell(active, content):
     tabs = "".join(
         '<a href="%s"%s>%s</a>' % (h, ' class="on"' if h == active else "", t) for h, t in TABS)
     label = [t for h, t in TABS if h == active][0]
-    head_title = '<title>Zentra Launch — %s</title>\n' % label          # % pada literal tunggal sahaja
+    head_title = '<title>Zantra Project — %s</title>\n' % label          # % pada literal tunggal sahaja
     tail = ('<div class="wrap">\n%s\n</div>\n'
-            '<div class="foot">Zentra Launch — buyer portal (mock-up) · Zentra Property Group<br>'
+            '<div class="foot">Zantra Project — buyer portal (mock-up) · Zentra Property Group<br>'
             'Documents &amp; invoices are issued by ZMJ Solutions (002093603-H)</div>\n'
             '</body>\n</html>\n') % content
     return (
@@ -42,7 +42,7 @@ def shell(active, content):
         '<link rel="stylesheet" href="../assets/zl-buyer.css">\n</head>\n<body>\n'
         + PV +
         '\n<div class="topbar"><div class="inner">'
-        '<div class="brand"><span class="mark"></span>ZENTRA <em>LAUNCH</em></div>'
+        '<div class="brand"><span class="mark"></span>ZANTRA <em>PROJECT</em></div>'
         '<div class="spacer"></div>'
         '<div class="who"><span>Signed in as <b>%s</b></span><span class="av">AF</span></div>'
         '</div></div>\n' % BUYER
@@ -145,7 +145,7 @@ booking = (
     + card("Need help?", rows([
         ("💬", "Message your sales agent", "Aina Zulkifli · replies within 1 working day", '<a class="btn ghost" href="#agent">Open</a>'),
         ("🛠", "Report a defect", "Available after vacant possession (Phase 2)", '<span class="badge b-info">Phase 2</span>'),
-        ("📞", "Zentra Launch support", "016-311 9076 · Mon–Fri 9am–6pm", '<a class="btn ghost" href="#support">Call</a>'),
+        ("📞", "Zantra Project support", "016-311 9076 · Mon–Fri 9am–6pm", '<a class="btn ghost" href="#support">Call</a>'),
     ]))
     + '<div class="note">Your booking data is held by Zentra Property Group. '
       'The Sale &amp; Purchase Agreement and all invoices are issued by the registered entity '
@@ -195,7 +195,7 @@ payments = (
     + '<div class="note"><b>No payment is collected before your SPA is signed</b> '
       '(Regulation 11(2), Housing Development Regulations 1989). Every payment you make appears here '
       'within 24 hours with a receipt and an e-invoice reference (LHDN MyInvois).<br>'
-      '<b>Zentra Launch never holds your money:</b> payments are made straight to the developer\u2019s '
+      '<b>Zantra Project never holds your money:</b> payments are made straight to the developer\u2019s '
       'Housing Development Account or the solicitor\u2019s client account — the system only records them, '
       'issues receipts and tracks your balance.</div>\n'
 )

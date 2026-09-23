@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""_gen_detail.py — penjana halaman drill-down ZENTRA LAUNCH: project.html + unit.html.
+"""_gen_detail.py — penjana halaman drill-down ZANTRA PROJECT: project.html + unit.html.
 
 - project.html?p=<slug>  : butiran satu projek (fasa/blok, senarai harga, prestasi jualan, pasukan, aktiviti)
 - unit.html?u=<id>       : butiran satu unit (spesifikasi, pelan lantai, status, tempahan, dokumen, log audit)
@@ -13,10 +13,10 @@ import os
 import re
 import sys
 
-sys.path.insert(0, "/home/ubuntu/mockup-hartanah/zentra-launch")
-import _gen_launch as G  # sidebar/header/page yang sama → nav seragam
+sys.path.insert(0, "/home/ubuntu/mockup-hartanah/zantra-project")
+import _gen_project as G  # sidebar/header/page yang sama → nav seragam
 
-OUT = "/home/ubuntu/mockup-hartanah/zentra-launch"
+OUT = "/home/ubuntu/mockup-hartanah/zantra-project"
 
 # ───────────────────────────────────────────────────────────────── data projek (SAMPEL)
 PROJECTS = [
@@ -195,7 +195,7 @@ function render(){
   var soldPct = Math.round(p.sold / p.units * 100);
   var value = p.sold * p.avg_price;
 
-  document.title = 'Zentra Launch — ' + p.name;
+  document.title = 'Zantra Project — ' + p.name;
   el('crumb', '<a class="back" href="projects.html">&larr; All projects</a> · <span>' + p.name + '</span>');
   el('title', p.name);
   el('sub', p.type + ' · ' + p.location + ' · ' + p.storeys + ' · ' + p.units + ' units');
@@ -302,7 +302,7 @@ function render(){
   var paid = d ? d.paid : 0;
   var outstanding = u.price - paid;
 
-  document.title = 'Zentra Launch — Unit ' + u.id;
+  document.title = 'Zantra Project — Unit ' + u.id;
   el('crumb', '<a class="back" href="inventory.html">&larr; Unit inventory</a> · <a class="back" href="project.html?p=avalon-cybersouth">Avalon Cybersouth</a> · Block ' + u.block);
   el('title', 'Unit ' + u.id);
   el('sub', 'Avalon Cybersouth · Block ' + u.block + ' · Level ' + u.level + ' · 3R2B · ' + u.built + ' sq ft');

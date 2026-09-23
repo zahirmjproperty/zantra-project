@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""_gen_guide.py — penjana halaman GUIDE (10 soalan semak + 6 keputusan) untuk mock-up ZENTRA LAUNCH.
+"""_gen_guide.py — penjana halaman GUIDE (10 soalan semak + 6 keputusan) untuk mock-up ZANTRA PROJECT.
 
 Zahir boleh jawab terus dalam halaman (radio), kemudian salin ringkasan keputusan dan hantar balik.
 Gaya selamat: HTML sebagai string; JS ringkas tanpa template literal.
@@ -8,8 +8,8 @@ Gaya selamat: HTML sebagai string; JS ringkas tanpa template literal.
 import json
 import sys
 
-sys.path.insert(0, "/home/ubuntu/mockup-hartanah/zentra-launch")
-import _gen_launch as G
+sys.path.insert(0, "/home/ubuntu/mockup-hartanah/zantra-project")
+import _gen_project as G
 
 BASE = "https://zahirmjproperty.github.io/mockup-hartanah/zentra-launch/"
 
@@ -32,8 +32,8 @@ DECISIONS = [
         "Admin console and buyer portal together",
         "Buyer portal first, admin console follows"]),
     ("d2", "Source of truth (waiting for explanation)", [
-        "Notion 'Projek Baharu MT' stays the source of truth; Zentra Launch syncs from it",
-        "Build a Zentra Launch database; Notion becomes a read-only archive",
+        "Notion 'Projek Baharu MT' stays the source of truth; Zantra Project syncs from it",
+        "Build a Zantra Project database; Notion becomes a read-only archive",
         "Keep both in parallel and reconcile manually",
         "Explain the three options in detail before I decide"]),
     ("d3", "Payment collection", [
@@ -42,7 +42,7 @@ DECISIONS = [
         "Billplz (FPX + cards) or DuitNow QR collected by the operator"]),
     ("d4", "Buyer identity", [
         "Reuse Zentra Portal accounts (Supabase) so a buyer has one Zentra ID",
-        "Separate buyer accounts inside Zentra Launch",
+        "Separate buyer accounts inside Zantra Project",
         "Email link access with no account (lightest friction)"]),
     ("d5", "Public microsite", [
         "Publish under launch.zentrapropertygroup.com (one path per project)",
@@ -87,7 +87,7 @@ function note(id){
   return e && e.value.trim() ? e.value.trim() : '';
 }
 function build(){
-  var lines = ['ZENTRA LAUNCH — review summary', ''];
+  var lines = ['ZANTRA PROJECT — review summary', ''];
   lines.push('REVIEW QUESTIONS');
   QS.forEach(function(q, i){
     var n = note('n-' + q[0]);
@@ -141,7 +141,7 @@ def soalans_html():
 
 
 # Jawapan Zahir 19/9/2026 (mesej Telegram): indeks pilihan yang dipilih; None = belum dijawab
-PICK = {"d1": 0, "d2": 1, "d3": 0, "d4": 0, "d5": 0, "d6": 0}   # B dipilih 19/9: Zentra Launch = SSOT
+PICK = {"d1": 0, "d2": 1, "d3": 0, "d4": 0, "d5": 0, "d6": 0}   # B dipilih 19/9: Zantra Project = SSOT
 # Jawapan 10 soalan semak (Zahir, 19/9/2026): 0 = Ya · 1 = Perlu ubah · 2 = Perbincangan
 ANSWERS = {"q1": 0, "q2": 0, "q3": 0, "q4": 0, "q5": 1, "q6": 0, "q7": 0, "q8": 0, "q9": 1, "q10": 0}
 CK = {True: " checked", False: ""}
@@ -197,16 +197,16 @@ BODY = """
       <div class="card-bd">
         <div class="kv">
           <div class="row"><span class="k">A · Phase 1 scope</span><span class="v">Admin console first</span></div>
-          <div class="row"><span class="k">B · Source of truth</span><span class="v">Zentra Launch is the system of record; Notion becomes a read-only archive</span></div>
+          <div class="row"><span class="k">B · Source of truth</span><span class="v">Zantra Project is the system of record; Notion becomes a read-only archive</span></div>
           <div class="row"><span class="k">C · Payment collection</span><span class="v">Transfer / cheque to the developer's Housing Development Account, or the solicitor's client account</span></div>
           <div class="row"><span class="k">D · Buyer identity</span><span class="v">Zentra ID (Zentra Portal, Supabase)</span></div>
           <div class="row"><span class="k">E · Public microsite</span><span class="v">launch.zentrapropertygroup.com</span></div>
           <div class="row"><span class="k">F · Launch timing</span><span class="v">After the Zentra Property Group cutover</span></div>
         </div>
         <div class="note" style="margin-top:14px"><b>B changes the plan:</b> before F1 can go live the Notion record
-          must be imported once and then frozen — <b>one writer only</b> (Zentra Launch). Import, freeze and cut-over
+          must be imported once and then frozen — <b>one writer only</b> (Zantra Project). Import, freeze and cut-over
           are now part of the F1 scope; until the freeze, Notion stays authoritative for existing records.</div>
-        <div class="note"><b>C changes the design:</b> Zentra Launch becomes
+        <div class="note"><b>C changes the design:</b> Zantra Project becomes
           <b>record-only</b> for money — it issues payment instructions, records slips that buyers upload, and tracks the
           balance. The system never holds client funds (and no e-wallet or card collection). The buyer portal and the
           admin billing screens have been updated to show the developer's Housing Development Account route.</div>
@@ -317,7 +317,7 @@ def main():
                 .replace("@@ROADMAP@@", roadmap_html())
                 .replace("@@MAP@@", map_html()))
     n = G.page("guide.html", "Guide", body + js, title_block=False)
-    css_path = "/home/ubuntu/mockup-hartanah/zentra-launch/assets/zl.css"
+    css_path = "/home/ubuntu/mockup-hartanah/zantra-project/assets/zl.css"
     css = open(css_path, encoding="utf-8").read()
     if "Guide (review) 19/9/2026" not in css:
         open(css_path, "w", encoding="utf-8").write(css + CSS_EXTRA)
