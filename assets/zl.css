@@ -153,8 +153,11 @@
 }
 .filter-row .phase-btn:hover { border-color: rgba(201,162,39,.3); color: var(--text); }
 .filter-row .phase-btn.active { 
-  background: var(--gold-core); color: var(--navy); 
-  border-color: var(--gold-core); font-weight: 700;
+  background: linear-gradient(135deg, #e8ce86 0%, #c9a227 45%, #9a7a2e 100%);
+  color: #0b1b2e; 
+  border-color: #c9a227;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(201,162,39,.20);
 }
 .filter-row .phase-btn .count {
   font-size: 10.5px; opacity: .7; margin-left: 4px;
@@ -206,6 +209,35 @@
   color: var(--text);
   background: var(--navy);
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Gold shimmer animation (luxury sparkle) ---- */
+@keyframes gold-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.gold-shimmer {
+  background: linear-gradient(90deg, #e8ce86 30%, #c9a227 45%, #f6dea3 50%, #c9a227 55%, #e8ce86 70%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gold-shimmer { animation: none; }
+}
+
+/* Gold gradient top border with shimmer on stat cards */
+.stat-row .stat-card .gold-top {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #e8ce86 25%, #c9a227 40%, #f6dea3 50%, #c9a227 60%, #e8ce86 75%);
+  background-size: 200% 100%;
+  z-index: 2;
+  animation: gold-shimmer 4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-row .stat-card .gold-top { animation: none; }
 }
 
 /* Light theme — background putih, sidebar tetap navy (luxury contrast) */
@@ -290,7 +322,11 @@ svg { display: block; flex-shrink: 0; }
   font-size: 16px; font-weight: 700; letter-spacing: .02em;
 }
 .sidebar .brand .wordmark em {
-  font-style: normal; color: var(--gold-core);
+  font-style: normal;
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sidebar .nav {
@@ -308,12 +344,17 @@ svg { display: block; flex-shrink: 0; }
 .sidebar .nav a svg { width: 20px; height: 20px; opacity: .7; }
 .sidebar .nav a:hover { color: var(--text); background: rgba(201,162,39,.06); }
 .sidebar .nav a.active {
-  color: var(--gold-light);
-  background: rgba(201,162,39,.10);
-  border-left-color: var(--gold-core);
+  color: #f0ead6;
+  background: linear-gradient(90deg, rgba(201,162,39,.14) 0%, rgba(201,162,39,.06) 100%);
   font-weight: 600;
+  position: relative;
 }
-.sidebar .nav a.active svg { opacity: 1; color: var(--gold-core); }
+.sidebar .nav a.active::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--grad-gold);
+}
+.sidebar .nav a.active svg { opacity: 1; color: #e8ce86; }
 .sidebar .nav .section-label {
   font-size: 10.5px; font-weight: 700; letter-spacing: .06em;
   text-transform: uppercase;
@@ -406,7 +447,8 @@ svg { display: block; flex-shrink: 0; }
 .header .actions .icon-btn .dot {
   position: absolute; top: 6px; right: 6px;
   width: 7px; height: 7px; border-radius: 50%;
-  background: var(--gold-core);
+  background: var(--grad-gold);
+  box-shadow: 0 0 6px rgba(201,162,39,.4);
 }
 .header .actions .avatar {
   width: 32px; height: 32px; border-radius: 50%;
@@ -433,7 +475,13 @@ svg { display: block; flex-shrink: 0; }
 .page-title .breadcrumb {
   font-size: 12px; color: var(--text-muted); margin-top: 2px;
 }
-.page-title .breadcrumb span { color: var(--gold-light); }
+.page-title .breadcrumb span {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
 
 /* --- Stat Card (Luxury Redesign 19 Sep 2026) --- */
 .stat-row {
@@ -445,7 +493,7 @@ svg { display: block; flex-shrink: 0; }
 .stat-row .stat-card {
   background: var(--navy-card);
   border: var(--hairline);
-  border-top: 2px solid var(--gold-core);
+  border-top: none;
   border-radius: var(--radius);
   padding: 20px 16px 16px;
   backdrop-filter: blur(6px);
@@ -458,8 +506,15 @@ svg { display: block; flex-shrink: 0; }
 .stat-row .stat-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad-gold);
+  z-index: 1;
+}
+.stat-row .stat-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
   height: 60px;
-  background: linear-gradient(180deg, rgba(201,162,39,.04) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(201,162,39,.06) 0%, transparent 100%);
   pointer-events: none;
 }
 .stat-row .stat-card:hover {
@@ -492,14 +547,13 @@ svg { display: block; flex-shrink: 0; }
 .stat-row .stat-card .trend.down { color: var(--danger); }
 .stat-row .stat-card .stat-icon {
   width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(201,162,39,.08);
-  border: 1px solid rgba(201,162,39,.14);
+  background: linear-gradient(135deg, rgba(201,162,39,.14) 0%, rgba(201,162,39,.06) 100%);
+  border: 1px solid rgba(201,162,39,.20);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 8px;
-  color: var(--gold-core);
   order: -1;
 }
-.stat-row .stat-card .stat-icon svg { width: 18px; height: 18px; }
+.stat-row .stat-card .stat-icon svg { width: 18px; height: 18px; stroke: #e8ce86; }
 .stat-row .stat-card .stat-sub {
   font-size: 12px; color: var(--text-dim);
   margin-top: 4px;
@@ -571,7 +625,11 @@ table.dash-table td.num { text-align: right; font-variant-numeric: tabular-nums;
   font-size: 10.5px; font-weight: 600; letter-spacing: .02em;
   border: 1px solid;
 }
-.badge.gold { color: var(--gold-light); border-color: rgba(201,162,39,.35); background: rgba(201,162,39,.08); }
+.badge.gold {
+  color: #e8ce86;
+  border-color: rgba(201,162,39,.45);
+  background: linear-gradient(135deg, rgba(201,162,39,.16) 0%, rgba(201,162,39,.04) 100%);
+}
 .badge.green { color: var(--success); border-color: rgba(95,199,157,.30); background: rgba(95,199,157,.06); }
 .badge.red { color: var(--danger); border-color: rgba(232,119,106,.30); background: rgba(232,119,106,.06); }
 .badge.amber { color: var(--warning); border-color: rgba(240,179,74,.30); background: rgba(240,179,74,.06); }
