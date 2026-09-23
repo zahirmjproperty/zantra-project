@@ -1,4 +1,4 @@
-# Zantra Project
+# Zentra Project
 
 New-launch sales system for property developers — Zentra Property Group.
 
@@ -24,7 +24,7 @@ New-launch sales system for property developers — Zentra Property Group.
 | Layer | Name |
 |---|---|
 | Client-facing brand | Zentra Property Group |
-| System | **Zantra Project** (decided by Zahir, 19 September 2026) |
+| System | **Zentra Project** (decided by Zahir, 19 September 2026) |
 | Previous working names | Zentra Sales Suite · Zentra Build *(now reserved for the ZPG construction arm)* |
 | Internal operator | Mr Tanah |
 
@@ -47,7 +47,7 @@ New-launch sales system for property developers — Zentra Property Group.
 | Mr Tanah — public property listings | `mrtanah.com` |
 | Zahir MJ Property | `zahirmjproperty.com` |
 
-Zantra Project is a **separate** system. Mr Tanah/ZMP remain listings-only.
+Zentra Project is a **separate** system. Mr Tanah/ZMP remain listings-only.
 
 ## Deployment
 

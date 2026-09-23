@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zantra Project — Guide</title>
+<title>Zentra Project — Guide</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="assets/zl.css?v=515e7220">
 <link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
@@ -12,7 +12,7 @@
 <div class="sidebar">
   <div class="brand">
     <span class="mark" aria-hidden="true"></span>
-    <span class="wordmark">ZANTRA <em>PROJECT</em></span>
+    <span class="wordmark">ZENTRA <em>PROJECT</em></span>
   </div>
   <nav class="nav" aria-label="Main">
     <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
@@ -61,16 +61,16 @@
       <div class="card-bd">
         <div class="kv">
           <div class="row"><span class="k">A · Phase 1 scope</span><span class="v">Admin console first</span></div>
-          <div class="row"><span class="k">B · Source of truth</span><span class="v">Zantra Project is the system of record; Notion becomes a read-only archive</span></div>
+          <div class="row"><span class="k">B · Source of truth</span><span class="v">Zentra Project is the system of record; Notion becomes a read-only archive</span></div>
           <div class="row"><span class="k">C · Payment collection</span><span class="v">Transfer / cheque to the developer's Housing Development Account, or the solicitor's client account</span></div>
           <div class="row"><span class="k">D · Buyer identity</span><span class="v">Zentra ID (Zentra Portal, Supabase)</span></div>
           <div class="row"><span class="k">E · Public microsite</span><span class="v">launch.zentrapropertygroup.com</span></div>
           <div class="row"><span class="k">F · Launch timing</span><span class="v">After the Zentra Property Group cutover</span></div>
         </div>
         <div class="note" style="margin-top:14px"><b>B changes the plan:</b> before F1 can go live the Notion record
-          must be imported once and then frozen — <b>one writer only</b> (Zantra Project). Import, freeze and cut-over
+          must be imported once and then frozen — <b>one writer only</b> (Zentra Project). Import, freeze and cut-over
           are now part of the F1 scope; until the freeze, Notion stays authoritative for existing records.</div>
-        <div class="note"><b>C changes the design:</b> Zantra Project becomes
+        <div class="note"><b>C changes the design:</b> Zentra Project becomes
           <b>record-only</b> for money — it issues payment instructions, records slips that buyers upload, and tracks the
           balance. The system never holds client funds (and no e-wallet or card collection). The buyer portal and the
           admin billing screens have been updated to show the developer's Housing Development Account route.</div>
@@ -132,15 +132,15 @@
 <div class="q"><div class="qt"><span class="qn">A</span> <b>Phase 1 scope</b></div><div class="opts"><label class="opt"><input type="radio" name="d1" value="Admin console first (projects, inventory, locks, bookings, billing) — buyer portal in Phase 2" checked> Admin console first (projects, inventory, locks, bookings, billing) — buyer portal in Phase 2 <span class="rec">recommended</span></label>
 <label class="opt"><input type="radio" name="d1" value="Admin console and buyer portal together"> Admin console and buyer portal together</label>
 <label class="opt"><input type="radio" name="d1" value="Buyer portal first, admin console follows"> Buyer portal first, admin console follows</label></div></div>
-<div class="q"><div class="qt"><span class="qn">B</span> <b>Source of truth (waiting for explanation)</b></div><div class="opts"><label class="opt"><input type="radio" name="d2" value="Notion 'Projek Baharu MT' stays the source of truth; Zantra Project syncs from it"> Notion 'Projek Baharu MT' stays the source of truth; Zantra Project syncs from it <span class="rec">recommended</span></label>
-<label class="opt"><input type="radio" name="d2" value="Build a Zantra Project database; Notion becomes a read-only archive" checked> Build a Zantra Project database; Notion becomes a read-only archive</label>
+<div class="q"><div class="qt"><span class="qn">B</span> <b>Source of truth (waiting for explanation)</b></div><div class="opts"><label class="opt"><input type="radio" name="d2" value="Notion 'Projek Baharu MT' stays the source of truth; Zentra Project syncs from it"> Notion 'Projek Baharu MT' stays the source of truth; Zentra Project syncs from it <span class="rec">recommended</span></label>
+<label class="opt"><input type="radio" name="d2" value="Build a Zentra Project database; Notion becomes a read-only archive" checked> Build a Zentra Project database; Notion becomes a read-only archive</label>
 <label class="opt"><input type="radio" name="d2" value="Keep both in parallel and reconcile manually"> Keep both in parallel and reconcile manually</label>
 <label class="opt"><input type="radio" name="d2" value="Explain the three options in detail before I decide"> Explain the three options in detail before I decide</label></div></div>
 <div class="q"><div class="qt"><span class="qn">C</span> <b>Payment collection</b></div><div class="opts"><label class="opt"><input type="radio" name="d3" value="Transfer / cheque into the developer's Housing Development Account (system is record-only)" checked> Transfer / cheque into the developer's Housing Development Account (system is record-only) <span class="rec">recommended</span></label>
 <label class="opt"><input type="radio" name="d3" value="Transfer / cheque into the solicitor's client account for SPA-stage payments"> Transfer / cheque into the solicitor's client account for SPA-stage payments</label>
 <label class="opt"><input type="radio" name="d3" value="Billplz (FPX + cards) or DuitNow QR collected by the operator"> Billplz (FPX + cards) or DuitNow QR collected by the operator</label></div></div>
 <div class="q"><div class="qt"><span class="qn">D</span> <b>Buyer identity</b></div><div class="opts"><label class="opt"><input type="radio" name="d4" value="Reuse Zentra Portal accounts (Supabase) so a buyer has one Zentra ID" checked> Reuse Zentra Portal accounts (Supabase) so a buyer has one Zentra ID <span class="rec">recommended</span></label>
-<label class="opt"><input type="radio" name="d4" value="Separate buyer accounts inside Zantra Project"> Separate buyer accounts inside Zantra Project</label>
+<label class="opt"><input type="radio" name="d4" value="Separate buyer accounts inside Zentra Project"> Separate buyer accounts inside Zentra Project</label>
 <label class="opt"><input type="radio" name="d4" value="Email link access with no account (lightest friction)"> Email link access with no account (lightest friction)</label></div></div>
 <div class="q"><div class="qt"><span class="qn">E</span> <b>Public microsite</b></div><div class="opts"><label class="opt"><input type="radio" name="d5" value="Publish under launch.zentrapropertygroup.com (one path per project)" checked> Publish under launch.zentrapropertygroup.com (one path per project) <span class="rec">recommended</span></label>
 <label class="opt"><input type="radio" name="d5" value="Publish project pages on mrtanah.com using the existing pipeline"> Publish project pages on mrtanah.com using the existing pipeline</label>
@@ -195,7 +195,7 @@ function note(id){
   return e && e.value.trim() ? e.value.trim() : '';
 }
 function build(){
-  var lines = ['ZANTRA PROJECT — review summary', ''];
+  var lines = ['ZENTRA PROJECT — review summary', ''];
   lines.push('REVIEW QUESTIONS');
   QS.forEach(function(q, i){
     var n = note('n-' + q[0]);
