@@ -5,7 +5,7 @@ New-launch sales system for property developers — Zentra Property Group.
 - **Host:** https://project.zentrapropertygroup.com
 - **Status:** Phase 1 (environment). Deployment is phased; no application modules are live yet.
 - **Visibility:** internal system, `noindex` until approved for public discovery.
-- **Interactive preview:** https://zahirmjproperty.github.io/mockup-hartanah/zantra-project/
+- **Interactive preview:** https://zahirmjproperty.github.io/mockup-hartanah/zentra-project/
 
 ## What the system covers
 
