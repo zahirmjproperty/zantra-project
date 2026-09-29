@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Storey plan | Zentra Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/zentra.css">
+<link rel="stylesheet" href="assets/zentra-ui.css">
+<style>
+.sp-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.sp-top select,.sp-top input{padding:9px 12px;border-radius:9px;background:rgba(18,40,63,.72);color:#fff;
+  border:1px solid rgba(201,162,39,.28);font:inherit;font-size:13.5px}
+.sp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}
+@media (max-width:980px){.sp-wrap{grid-template-columns:1fr}}
+.sp-blok{background:rgba(18,40,63,.55);border:1px solid rgba(201,162,39,.20);border-radius:14px;
+  padding:16px 18px;margin-bottom:16px}
+.sp-blok h3{margin:0 0 4px;font-size:14px;letter-spacing:.02em}
+.sp-blok .sub{font-size:11.5px;color:#8c9fb4;margin:0 0 14px}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:9px}
+.sp-u{border:1px solid rgba(201,162,39,.22);border-radius:10px;padding:9px 8px;text-align:center;
+  cursor:pointer;background:rgba(11,27,46,.55);transition:transform .12s ease,border-color .12s ease}
+.sp-u:hover{transform:translateY(-2px);border-color:rgba(201,162,39,.6)}
+.sp-u .n{font-weight:800;font-size:12.5px;display:block}
+.sp-u .t{font-size:10.5px;color:#8c9fb4;display:block;margin-top:3px}
+.sp-u .p{font-size:10.5px;display:block;margin-top:4px;font-variant-numeric:tabular-nums}
+.sp-u.tersedia{border-color:rgba(95,199,157,.55);background:rgba(95,199,157,.10)}
+.sp-u.ditempah{border-color:rgba(240,179,74,.6);background:rgba(240,179,74,.12)}
+.sp-u.terjual{border-color:rgba(148,163,184,.35);background:rgba(148,163,184,.10);opacity:.62}
+.sp-u.terkunci{border-color:rgba(167,139,250,.5);background:rgba(167,139,250,.12)}
+.sp-u.on{outline:2px solid #c9a227;outline-offset:1px}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:#c7d1dc;margin-top:14px}
+.leg span{display:flex;align-items:center;gap:6px}
+.leg i{width:12px;height:12px;border-radius:3px;display:block}
+.sp-side{position:sticky;top:18px}
+.sp-card{background:rgba(18,40,63,.72);border:1px solid rgba(201,162,39,.22);border-radius:14px;padding:16px 18px}
+.sp-card h3{margin:0 0 10px;font-size:14px}
+.sp-row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:6px 0;
+  border-bottom:1px solid rgba(201,162,39,.10)}
+.sp-row:last-child{border-bottom:0}
+.sp-row span:first-child{color:#8c9fb4}
+.sp-row b{font-variant-numeric:tabular-nums}
+.sp-empty{font-size:12.5px;color:#8c9fb4;line-height:1.6}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px}
+.kpi2{background:rgba(18,40,63,.72);border:1px solid rgba(201,162,39,.20);border-radius:12px;padding:13px 15px}
+.kpi2 .l{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#8c9fb4;font-weight:700}
+.kpi2 .v{font-size:20px;font-weight:800;margin-top:5px;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>PROJECT</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
+    <a href="storey-plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 9v12M15 9v12"/></svg><span>Storey plan</span></a>
+    <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
+    <div class="section-label">Money</div>
+    <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
+    <a href="commission.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Commission</span></a>
+    <a href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="11" y2="15"/></svg><span>Billing</span></a>
+    <div class="section-label">System</div>
+    <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg><span>Settings</span></a>
+    <a href="guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3-5 3V6a2 2 0 0 1 2-2z"/><path d="M9 9h6M9 13h4"/></svg><span>Guide</span></a>
+  </nav>
+  <div class="user-foot">
+    <div class="avatar">ZL</div>
+    <div class="info">
+      <div class="name">Zahir Admin</div>
+      <div class="role">Developer</div>
+    </div>
+  </div>
+</div>
+
+
+<main class="main">
+  <div class="top">
+    <div>
+      <h1>Storey plan</h1>
+      <p>Pelan tingkat setiap blok: lihat status semua unit sekilas, pilih satu unit untuk butiran penuh, dan tandakan unit yang perlu perhatian. Dijana daripada data projek &mdash; projek baharu tidak memerlukan kod baharu.</p>
+    </div>
+    <span class="badge-demo">PROTOTYPE &middot; SAMPLE DATA</span>
+  </div>
+
+  <div class="sp-top">
+    <select id="projek"></select>
+    <select id="blok"></select>
+    <input type="search" id="cari" placeholder="Cari no. unit (cth. 08-05)">
+    <span class="small" style="color:#8c9fb4;margin-left:auto" id="jumlah"></span>
+  </div>
+
+  <div class="kpi-row" id="kpis"></div>
+
+  <div class="sp-wrap">
+    <div id="pelan"></div>
+    <aside class="sp-side">
+      <div class="sp-card" id="detail">
+        <h3>Unit</h3>
+        <p class="sp-empty">Pilih unit pada pelan tingkat untuk melihat butiran.</p>
+      </div>
+      <div class="sp-card" style="margin-top:14px">
+        <h3>Status unit</h3>
+        <div id="statusSen"></div>
+      </div>
+    </aside>
+  </div>
+</main>
+<script src="assets/project-data.js?v=1"></script>
+<script>
+(function(){
+  const el = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const P = (window.ZP && window.ZP.PROJECTS) || [];
+  let projek = P[0], blok = null, unitTerpilih = null;
+
+  function rp(n){ return 'RM ' + Number(n).toLocaleString('en-MY'); }
+
+  function isiProjek(){
+    el('projek').innerHTML = P.map((p,i) => '<option value="' + i + '">' + esc(p.name) + '</option>').join('');
+    el('projek').onchange = function(){
+      projek = P[Number(this.value)];
+      unitTerpilih = null;
+      isiBlok(); lukis();
+    };
+  }
+
+  function isiBlok(){
+    const bs = projek.blocks || [];
+    el('blok').innerHTML = bs.map((b,i) => '<option value="' + i + '">' + esc(b.name) + '</option>').join('');
+    el('blok').onchange = function(){ blok = (projek.blocks||[])[Number(this.value)]; unitTerpilih = null; lukis(); };
+    blok = bs[0] || null;
+  }
+
+  function unitBlok(){
+    return (projek.units || []).filter(u => blok && u.block === blok.name);
+  }
+
+  function kpis(){
+    const u = projek.units || [];
+    const kira = s => u.filter(x => x.status === s).length;
+    const nilaiTersedia = u.filter(x => x.status === 'tersedia').reduce((a,b) => a + b.price, 0);
+    const K = [
+      ['Jumlah unit', u.length],
+      ['Tersedia', kira('tersedia')],
+      ['Ditempah', kira('ditempah')],
+      ['Terjual', kira('terjual')],
+      ['Nilai unit tersedia', rp(nilaiTersedia)]
+    ];
+    el('kpis').innerHTML = K.map(k =>
+      '<div class="kpi2"><div class="l">' + k[0] + '</div><div class="v">' + k[1] + '</div></div>').join('');
+  }
+
+  function lukis(){
+    if(!projek){ el('pelan').innerHTML = '<p class="sp-empty">Tiada data projek.</p>'; return; }
+    const cari = (el('cari').value || '').trim().toLowerCase();
+    const blokSen = (projek.blocks || []);
+    const html = blokSen.map(b => {
+      const units = (projek.units || []).filter(u => u.block === b.name);
+      const inner = units.map(u => {
+        if(cari && u.id.toLowerCase().indexOf(cari) < 0) return '';
+        const on = unitTerpilih === u.id ? ' on' : '';
+        return '<div class="sp-u ' + u.status + on + '" data-u="' + esc(u.id) + '">'
+          + '<span class="n">' + esc(u.id.split('-').slice(-2).join('-')) + '</span>'
+          + '<span class="t">' + esc(u.type) + '</span>'
+          + '<span class="p">' + (u.price/1000).toFixed(0) + 'k</span></div>';
+      }).join('');
+      const kira = s => units.filter(x => x.status === s).length;
+      return '<div class="sp-blok"><h3>' + esc(b.name) + '</h3>'
+        + '<p class="sub">' + units.length + ' unit &middot; tersedia ' + kira('tersedia')
+        + ' &middot; ditempah ' + kira('ditempah') + ' &middot; terjual ' + kira('terjual') + '</p>'
+        + '<div class="sp-grid">' + (inner || '<p class="sp-empty">Tiada unit sepadan.</p>') + '</div></div>';
+    }).join('');
+    el('pelan').innerHTML = html
+      + '<div class="leg">'
+      + '<span><i style="background:rgba(95,199,157,.5)"></i>Tersedia</span>'
+      + '<span><i style="background:rgba(240,179,74,.6)"></i>Ditempah</span>'
+      + '<span><i style="background:rgba(148,163,184,.4)"></i>Terjual</span>'
+      + '<span><i style="background:rgba(167,139,250,.5)"></i>Terkunci (tempahan keutamaan)</span>'
+      + '</div>';
+    el('pelan').querySelectorAll('.sp-u').forEach(e => e.onclick = () => { unitTerpilih = e.dataset.u; lukis(); detail(); });
+    const semua = (projek.units || []);
+    const nampak = cari ? semua.filter(u => u.id.toLowerCase().indexOf(cari) > -1).length : semua.length;
+    el('jumlah').textContent = nampak + ' / ' + semua.length + ' unit dipaparkan';
+    detail();
+  }
+
+  function detail(){
+    if(!unitTerpilih){ return; }
+    const u = (projek.units || []).find(x => x.id === unitTerpilih);
+    if(!u){ return; }
+    const pill = u.status === 'tersedia' ? '<span class="pill" style="color:#5fc79d">Tersedia</span>'
+      : u.status === 'ditempah' ? '<span class="pill" style="color:#f0b34a">Ditempah</span>'
+      : u.status === 'terkunci' ? '<span class="pill" style="color:#a78bfa">Terkunci</span>'
+      : '<span class="pill" style="color:#94a3b8">Terjual</span>';
+    el('detail').innerHTML = '<h3>' + esc(u.id) + ' ' + pill + '</h3>'
+      + '<div class="sp-row"><span>Blok</span><b>' + esc(u.block) + '</b></div>'
+      + '<div class="sp-row"><span>Jenis</span><b>' + esc(u.type) + '</b></div>'
+      + '<div class="sp-row"><span>Keluasan</span><b>' + esc(u.builtUp) + ' sq ft</b></div>'
+      + '<div class="sp-row"><span>Harga</span><b>' + rp(u.price) + '</b></div>'
+      + '<div class="sp-row"><span>Muka</span><b>' + esc(u.facing || '-') + '</b></div>'
+      + '<div class="sp-row"><span>Reba</span><b>' + (u.rebate ? rp(u.rebate) : '-') + '</b></div>';
+  }
+
+  function statusSen(){
+    const u = projek ? (projek.units || []) : [];
+    const kira = s => u.filter(x => x.status === s).length;
+    el('statusSen').innerHTML = ['tersedia','ditempah','terjual','terkunci'].map(s =>
+      '<div class="sp-row"><span>' + s.charAt(0).toUpperCase() + s.slice(1) + '</span><b>' + kira(s) + '</b></div>').join('');
+  }
+
+  el('cari').oninput = lukis;
+  isiProjek(); isiBlok(); kpis(); lukis(); statusSen();
+})();
+</script>
+</body>
+</html>
