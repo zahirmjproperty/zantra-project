@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zentra Project — Unit detail</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="assets/zl.css?v=515e7220">
-<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+<link rel="stylesheet" href="assets/zl.css?v=20260920b">
 </head>
 <body>
 <div class="sidebar">
@@ -18,7 +17,6 @@
     <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
     <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
     <a href="inventory.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg><span>Inventory</span></a>
-    <a href="storey-plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 9v12M15 9v12"/></svg><span>Storey plan</span></a>
     <a href="leads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></a>
     <div class="section-label">Money</div>
     <a href="sales.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Sales</span></a>
@@ -122,10 +120,10 @@ function render(){
     ['Est. completion', 'Dec 2028'], ['DL / APDL', 'DL 2026/0418 · APDL 2026/1042']
   ]));
   el('price_history', '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Date</th><th>Entry</th><th>Amount</th></tr></thead><tbody>' +
-    '<tr><td data-label="Date">02 Jan 2026</td><td data-label="Entry">Launch price list</td><td class="num" data-label="Amount">' + fmt(u.price - 30000) + '</td></tr>' +
-    '<tr><td data-label="Date">17 Mar 2026</td><td data-label="Entry">Revision +2% (Block A)</td><td class="num" data-label="Amount">' + fmt(u.price) + '</td></tr>' +
-    (d ? '<tr><td data-label="Date">' + d.booking_date + '</td><td data-label="Entry">Launch discount — booking</td><td class="num gold" data-label="Amount">- ' + fmt(10000) + '</td></tr>' +
-         '<tr><td data-label="Date">—</td><td data-label="Entry"><b>Nett selling price</b></td><td class="num gold" data-label="Amount">' + fmt(u.price - 10000) + '</td></tr>' : '') +
+    '<tr><td>02 Jan 2026</td><td>Launch price list</td><td class="num">' + fmt(u.price - 30000) + '</td></tr>' +
+    '<tr><td>17 Mar 2026</td><td>Revision +2% (Block A)</td><td class="num">' + fmt(u.price) + '</td></tr>' +
+    (d ? '<tr><td>' + d.booking_date + '</td><td>Launch discount — booking</td><td class="num gold">- ' + fmt(10000) + '</td></tr>' +
+         '<tr><td>—</td><td><b>Nett selling price</b></td><td class="num gold">' + fmt(u.price - 10000) + '</td></tr>' : '') +
     '</tbody></table></div>');
   el('plan', "<div class=\"plan\">\n<svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Sample 3R2B floor plan\">\n  <g fill=\"none\" stroke=\"#c9a227\" stroke-opacity=\".55\" stroke-width=\"1.4\">\n    <rect x=\"10\" y=\"10\" width=\"400\" height=\"280\" rx=\"3\"/>\n    <path d=\"M10 150h240M250 10v90M250 150v140M360 150v140M10 210h240\"/>\n  </g>\n  <g fill=\"#f0ead6\" fill-opacity=\".80\" font-family=\"Plus Jakarta Sans, sans-serif\" font-size=\"9.5\">\n    <text x=\"22\" y=\"30\">MASTER BEDROOM 14'0\" x 12'0\"</text>\n    <text x=\"22\" y=\"170\">LIVING / DINING 14'0\" x 13'0\"</text>\n    <text x=\"262\" y=\"30\">BEDROOM 2 10'0\" x 10'0\"</text>\n    <text x=\"262\" y=\"170\">BEDROOM 3 10'0\" x 9'0\"</text>\n    <text x=\"370\" y=\"30\">BATH 1</text>\n    <text x=\"370\" y=\"170\">BATH 2</text>\n    <text x=\"22\" y=\"230\">KITCHEN + YARD</text>\n  </g>\n  <g stroke=\"#94a3b8\" stroke-width=\"1\" fill=\"none\">\n    <path d=\"M250 128a12 12 0 0 1 22 0\" />\n    <path d=\"M360 128a12 12 0 0 1 22 0\" />\n    <path d=\"M80 205a12 12 0 0 1 0 22\" />\n  </g>\n  <g fill=\"#e8ce86\" font-family=\"Plus Jakarta Sans, sans-serif\" font-size=\"9\">\n    <text x=\"196\" y=\"294\">BUILT-UP 1,050 SQ FT</text>\n    <text x=\"18\" y=\"8\">N</text>\n  </g>\n</svg>\n<div class=\"cap\">Sample layout \u2014 3R2B \u00b7 1,050 sq ft \u00b7 layout varies by stack (mock-up)</div>\n</div>");
 
@@ -189,6 +187,5 @@ function toggleTheme() {
   }
 })();
 </script>
-<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
 </body>
 </html>
