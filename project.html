@@ -67,7 +67,74 @@
       </div>
     </div>
 
-<!-- AWAM:DATA-REMOVED -->
+<script>
+<!-- AWAM:DATA --><script src="assets/project-data.js?v=3"></script>
+<script>
+/* PUBLIC project detail. Reads assets/project-data.js (allow-listed fields only:
+   no take-up, no sales team, no activity feed, no DL/APDL, no booking data). */
+function fmt(n){ return 'RM ' + Number(n||0).toLocaleString('en-MY'); }
+function el(id, html){ var e = document.getElementById(id); if (e) e.innerHTML = html; }
+function kv(rows){ return rows.map(function(r){
+  return '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'; }).join(''); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+function render(){
+  var P = (window.ZP && window.ZP.PROJECTS) || [];
+  if (!P.length){ el('title','No project data'); return; }
+  var slug = new URLSearchParams(location.search).get('p') || P[0].slug;
+  var p = P.filter(function(x){ return x.slug === slug; })[0] || P[0];
+
+  document.title = 'Zentra Project — ' + p.name;
+  el('crumb', '<a class="back" href="projects.html">&larr; All projects</a> · <span>' + esc(p.name) + '</span>');
+  el('title', p.name);
+  el('sub', [p.type, p.location, p.storeys, (p.unitsTotal || '') + ' units']
+      .filter(Boolean).join(' · '));
+  el('chips', P.map(function(x){
+    return '<a class="chip' + (x.slug === p.slug ? ' on' : '') + '" href="project.html?p=' + x.slug + '">' + esc(x.name) + '</a>';
+  }).join(''));
+
+  var blocks = p.blocks || [];
+  var stats = [
+    ['Total units', p.unitsTotal || '—', blocks.length + ' block(s)'],
+    ['Launch', p.launch || '—', p.tenure || ''],
+    ['Est. completion', p.completion || '—', p.storeys || ''],
+    ['Price list', (p.prices && p.prices.length) ? 'published' : 'on request', p.developer || '']
+  ];
+  el('stats', stats.map(function(s){
+    return '<div class="stat-card"><div class="value">' + esc(s[1]) + '</div>' +
+           '<div class="label">' + esc(s[0]) + '</div>' +
+           '<div class="trend up">' + esc(s[2]) + '</div></div>'; }).join(''));
+
+  var spec = [['Project', p.name], ['Type', p.type], ['Location', p.location]];
+  if (p.developer) spec.splice(2, 0, ['Developer', p.developer]);
+  spec.push(['Land area', p.land], ['Tenure', p.tenure], ['Launch', p.launch],
+            ['Est. completion', p.completion]);
+  el('spec', kv(spec));
+
+  el('blocks', blocks.length
+    ? '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Block / phase</th><th>Units</th></tr></thead><tbody>' +
+      blocks.map(function(b){
+        return '<tr><td class="strong">' + esc(b.name) + '</td><td class="num">' + esc(b.units) + '</td></tr>';
+      }).join('') + '</tbody></table></div>'
+    : '<p class="note" style="color:var(--text-muted);font-size:13px">Block breakdown not published yet.</p>');
+
+  el('prices', (p.prices && p.prices.length)
+    ? '<div class="table-wrap"><table class="dash-table"><thead><tr><th>Unit type</th><th>Built-up</th><th>Price range</th></tr></thead><tbody>' +
+      p.prices.map(function(r){ return '<tr><td class="strong">' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td class="num gold">' + esc(r[2]) + '</td></tr>'; }).join('') +
+      '</tbody></table></div>'
+    : '<p class="note" style="color:var(--text-muted);font-size:13px">Price list on request.</p>');
+
+  el('activity', '<p class="note" style="color:var(--text-muted);font-size:13px">' +
+    'Project activity is not published on the public site.</p>');
+  el('team', '<p class="note" style="color:var(--text-muted);font-size:13px">' +
+    'Sales team is not published on the public site.</p>');
+  el('links', p.microsite
+    ? '<a class="btn btn-gold" href="' + esc(p.microsite) + '" target="_blank" rel="noopener">Project microsite &rarr;</a>'
+    : '<span class="note">Microsite not published yet.</span>');
+}
+render();
+</script>
 
   </div>
 </div>

@@ -61,7 +61,84 @@
       </div>
     </div>
 
-<!-- AWAM:DATA-REMOVED -->
+<script>
+<!-- AWAM:DATA --><script src="assets/project-data.js?v=3"></script>
+<script>
+/* PUBLIC unit detail. Reads assets/project-data.js (allow-listed fields only:
+   no buyer, agent, booking reference, amount paid, SPA date or stage). */
+function fmt(n){ return 'RM ' + Number(n||0).toLocaleString('en-MY'); }
+function el(id, html){ var e = document.getElementById(id); if (e) e.innerHTML = html; }
+function kv(rows){ return rows.map(function(r){
+  return '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + '</span></div>'; }).join(''); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+var LABEL = { available:'Available', booked:'Booked', reserved:'Reserved',
+              sold:'Sold', locked:'Locked' };
+
+function cariUnit(id){
+  var P = (window.ZP && window.ZP.PROJECTS) || [], i, j, u;
+  for (i = 0; i < P.length; i++){
+    var us = P[i].units || [];
+    for (j = 0; j < us.length; j++){ if (us[j].id === id) { u = us[j]; u._proj = P[i]; return u; } }
+  }
+  return null;
+}
+
+function render(){
+  var id = new URLSearchParams(location.search).get('u');
+  var u = id ? cariUnit(id) : null;
+  if (!u){
+    el('crumb', '<a class="back" href="projects.html">&larr; All projects</a>');
+    el('title', 'Unit');
+    el('status', '<div class="card"><div class="card-bd">' +
+      '<p style="color:var(--text-muted);font-size:13.5px">Unit not found in the published data. ' +
+      '<a class="back" href="projects.html">Back to all projects</a>.</p></div></div>');
+    if (el('audit')) el('audit','');
+    return;
+  }
+  var p = u._proj;
+  document.title = 'Zentra Project — ' + u.id;
+  el('crumb', '<a class="back" href="projects.html">&larr; All projects</a> · ' +
+    '<a class="back" href="project.html?p=' + p.slug + '">' + esc(p.name) + '</a> · Block ' + esc(u.block));
+  el('title', u.id);
+  el('badge', '<span class="badge">' + esc(LABEL[u.status] || u.status) + '</span>');
+  el('sub', [p.name, u.type, u.builtUp, u.facing ? ('facing ' + u.facing) : '']
+      .filter(Boolean).join(' · '));
+
+  var status = LABEL[u.status] || u.status;
+  el('stats', [
+    ['Status', esc(status)],
+    ['List price', fmt(u.price)],
+    ['Built-up', esc(u.builtUp)],
+    ['Facing', esc(u.facing)]
+  ].map(function(s){
+    return '<div class="stat-card"><div class="value">' + s[1] + '</div>' +
+           '<div class="label">' + s[0] + '</div></div>'; }).join(''));
+
+  el('spec', kv([['Unit', esc(u.id)], ['Block', esc(u.block)],
+    ['Floor', esc(u.floor) + 'F'], ['Stack', esc(u.stack)],
+    ['Type', esc(u.type)], ['Built-up', esc(u.builtUp)],
+    ['Facing', esc(u.facing)], ['List price', fmt(u.price)]]));
+
+  el('status', '<div class="card"><div class="card-hd"><h2>Availability</h2>' +
+    '<span class="more">' + esc(status) + '</span></div><div class="card-bd">' +
+    '<p style="color:var(--text-muted);font-size:13px;margin:0 0 12px">' +
+    'Availability is shown for information only and can change. Contact the sales team to confirm and to book.</p>' +
+    (p.microsite ? '<a class="btn btn-gold" href="' + esc(p.microsite) + '" target="_blank" rel="noopener">Open project microsite &rarr;</a>' : '') +
+    '</div></div>');
+
+  el('price_history', '<p class="note" style="color:var(--text-muted);font-size:13px">' +
+    'Price and discount history is not published on the public site.</p>');
+
+  if (el('plan')) el('plan', '<p class="note" style="color:var(--text-muted);font-size:13px">' +
+    'Floor plan is provided on request.</p>');
+  if (el('audit')) el('audit',
+    '<p class="note" style="color:var(--text-muted);font-size:13px">' +
+    'Booking, payment and document history are not published on the public site.</p>');
+}
+render();
+</script>
 
   </div>
 </div>
