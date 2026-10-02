@@ -13,3 +13,10 @@ footer .brand img{height:32px}
   .hero .actions{flex-direction:column;align-items:stretch}
   .hero .actions .button{width:100%}
 }
+
+/* Logo rasmi Zentra (mark SVG + lockup). Mark = SVG, bukan imej raster. */
+.brand .brand-mark{height:34px;width:34px;flex:0 0 auto;display:block}
+footer .brand .brand-mark{height:26px;width:26px}
+.brand-text{display:flex;flex-direction:column;line-height:1.02;letter-spacing:.14em}
+.brand-text b{font-weight:800;color:var(--text)}
+.brand-text>span{font-weight:800;background:linear-gradient(135deg,#e8ce86 0%,#c9a227 45%,#9a7a2e 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
