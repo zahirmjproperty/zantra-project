@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zentra Project — Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/zl.css?v=515e7220">
+<link rel="stylesheet" href="assets/zentra-ui.css?v=7277ff13">
+</head>
+<body>
+<div class="sidebar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="wordmark">ZENTRA <em>PROJECT</em></span>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+    <a href="projects.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 8.5V19h14V8.5"/><path d="M10 19v-5h4v5"/></svg><span>Projects</span></a>
+    <a href="storey-plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M9 9v12M15 9v12"/></svg><span>Storey plan</span></a>
+  </nav>
+</div>
+
+<div class="main">
+  <header class="header">
+    <button class="nav-toggle" aria-label="Menu" onclick="document.body.classList.toggle('sidebar-collapsed')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="search"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" placeholder="Search projects, units, buyers..." aria-label="Search"></div>
+    <div class="actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" onclick="toggleTheme()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="sunIcon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="moonIcon" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="dot"></span></button>
+      <div class="avatar">ZL</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="banner">System of record: <b>Zentra Project</b>. Notion 'Projek Baharu MT' becomes a read-only archive after the one-time import (decision 19/9/2026).</div>
+        <div class="page-title">
+      <h1>Dashboard</h1>
+      <div class="breadcrumb"><span>Zentra Project</span> · <span>Dashboard</span></div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="value">6</div>
+        <div class="label">Active Projects</div>
+        <div class="trend up">↑ 2 since last quarter</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">342</div>
+        <div class="label">Total Units</div>
+        <div class="trend up">↑ 18 new this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">47%</div>
+        <div class="label">Sold Rate</div>
+        <div class="trend up">↑ 5% this quarter</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">RM 4.2M</div>
+        <div class="label">Total Sales</div>
+        <div class="trend up">↑ RM 620K this month</div>
+      </div>
+    </div>
+
+    <!-- Project Pipeline / Active Projects -->
+    <h2 style="font-size:17px;font-weight:700;margin-bottom:12px;color:var(--text)">Active Projects</h2>
+    <div class="project-grid">
+      <a class="project-card" href="project.html?p=xme-business-park-2">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(95,199,222,.15);color:#7fd8ea;border:1px solid rgba(95,199,222,.25)">Industrial</span></div>
+        <div class="pc-body">
+          <h3>XME Business Park 2</h3>
+          <div class="pc-loc">Nilai Impian, Nilai, Negeri Sembilan &middot; Semi-D &amp; linked factories</div>
+          <div class="pc-stats"><span>Total: <strong>59</strong></span><span>Sold: <strong>21</strong></span><span>Reserved: <strong>0</strong></span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:36%"></div></div>
+          <div class="pc-meta"><span>Launch: Phase 3B</span><span>Est. completion: Q3 2029</span></div>
+        </div>
+      </a>
+      <a class="project-card" href="project.html?p=budiman-semenyih">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(95,199,222,.15);color:#7fd8ea;border:1px solid rgba(95,199,222,.25)">Industrial</span></div>
+        <div class="pc-body">
+          <h3>Pusat Perindustrian Budiman</h3>
+          <div class="pc-loc">Sungai Lalang, Semenyih, Selangor &middot; Semi-D &amp; detached factories</div>
+          <div class="pc-stats"><span>Total: <strong>15</strong></span><span>Sold: <strong>&mdash;</strong></span><span>Reserved: <strong>&mdash;</strong></span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:100%;opacity:.25"></div></div>
+          <div class="pc-meta"><span>Launch: to confirm</span><span>Status: to confirm with developer</span></div>
+        </div>
+      </a>
+      <div class="project-card">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(201,162,39,.15);color:var(--gold-light)">High-Rise</span></div>
+        <div class="pc-body">
+          <h3>Avalon Cybersouth</h3>
+          <div class="pc-loc">Cyberjaya, Selangor</div>
+          <div class="pc-stats"><span>Units: <strong>120</strong></span><span>Sold: <strong>68</strong> (57%)</span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:57%"></div></div>
+          <div class="pc-meta"><span>Launch: Jan 2026</span><span>Target: 85%</span></div>
+        </div>
+      </div>
+      <!-- Repeat for other projects... -->
+      <div class="project-card">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(95,199,157,.15);color:var(--success)">Landed</span></div>
+        <div class="pc-body">
+          <h3>Setia Seraya P15</h3>
+          <div class="pc-loc">Shah Alam, Selangor</div>
+          <div class="pc-stats"><span>Units: <strong>86</strong></span><span>Sold: <strong>52</strong> (60%)</span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:60%"></div></div>
+          <div class="pc-meta"><span>Launch: Mar 2026</span><span>Target: 80%</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(240,179,74,.15);color:var(--warning)">Serviced</span></div>
+        <div class="pc-body">
+          <h3>Allamanda Saujana KLIA</h3>
+          <div class="pc-loc">Sepang, Selangor</div>
+          <div class="pc-stats"><span>Units: <strong>48</strong></span><span>Sold: <strong>41</strong> (85%)</span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:85%"></div></div>
+          <div class="pc-meta"><span>Launch: Sep 2025</span><span>Target: 100%</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="pc-cover"><span class="pc-badge" style="background:rgba(107,181,224,.15);color:var(--info)">High-Rise</span></div>
+        <div class="pc-body">
+          <h3>Senna Presint 12</h3>
+          <div class="pc-loc">Putrajaya</div>
+          <div class="pc-stats"><span>Units: <strong>200</strong></span><span>Sold: <strong>45</strong> (23%)</span></div>
+          <div class="pc-progress"><div class="pc-bar" style="width:23%"></div></div>
+          <div class="pc-meta"><span>Launch: Jun 2026</span><span>Target: 70%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Milestones -->
+    <div class="card">
+      <div class="card-hd"><h2>Upcoming Milestones</h2></div>
+      <div class="card-bd">
+        <div class="timeline">
+          <div class="tl-item done">
+            <div class="tl-date">Oct 2026</div>
+            <div class="tl-label">Avalon Cybersouth — Phase 1 Handover</div>
+            <div class="tl-desc">120 units key collection scheduled</div>
+          </div>
+          <div class="tl-item active">
+            <div class="tl-date">Nov 2026</div>
+            <div class="tl-label">Setia Seraya P15 — Full Launch</div>
+            <div class="tl-desc">86 units released, marketing campaign starts</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Dec 2026</div>
+            <div class="tl-label">Senna Presint 12 — Phase 2 Opening</div>
+            <div class="tl-desc">60 new units for sale</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">Q1 2027</div>
+            <div class="tl-label">Terra Residences — Completion</div>
+            <div class="tl-desc">42 units ready for occupancy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.classList.toggle('theme-light');
+  document.getElementById('sunIcon').style.display = isLight ? 'none' : '';
+  document.getElementById('moonIcon').style.display = isLight ? '' : 'none';
+  localStorage.setItem('zl-theme', isLight ? 'light' : 'dark');
+}
+(function() {
+  var theme = localStorage.getItem('zl-theme') || 'dark';
+  if (window.location.search.indexOf('theme=light') > -1) theme = 'light';
+  if (theme === 'light') {
+    document.documentElement.classList.add('theme-light');
+    document.getElementById('sunIcon').style.display = 'none';
+    document.getElementById('moonIcon').style.display = '';
+  }
+})();
+</script>
+<script src="assets/zentra-ui.js?v=7277ff13" defer></script>
+</body>
+</html>
