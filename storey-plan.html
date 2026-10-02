@@ -83,9 +83,16 @@ a.sp-u.dim{opacity:.14}
 </style>
 </head>
 <body>
+<svg class="zentra-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <linearGradient id="zGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8CE86"/><stop offset="45%" stop-color="#C9A227"/><stop offset="100%" stop-color="#9A7A2E"/></linearGradient>
+    <symbol id="zentra-mark" viewBox="0 0 64 64"><path d="M32 6 L58 20 L32 34 L6 20 Z" fill="url(#zGold)" opacity="1"/><path d="M32 22 L58 36 L32 50 L6 36 Z" fill="url(#zGold)" opacity=".72"/><path d="M32 34 L54 46 L32 58 L10 46 Z" fill="url(#zGold)" opacity=".44"/><path d="M32 6 L58 20 L32 34 L6 20 Z" fill="none" stroke="#9A7A2E" stroke-width="1.1" opacity=".85"/><path d="M32 22 L58 36 L32 50 L6 36 Z" fill="none" stroke="#9A7A2E" stroke-width="1" opacity=".6"/><path d="M32 34 L54 46 L32 58 L10 46 Z" fill="none" stroke="#9A7A2E" stroke-width="1" opacity=".45"/></symbol>
+  </defs>
+</svg>
+
 <div class="sidebar">
   <div class="brand">
-    <span class="mark" aria-hidden="true"></span>
+    <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#zentra-mark"/></svg>
     <span class="wordmark">ZENTRA <em>PROJECT</em></span>
   </div>
   <nav class="nav" aria-label="Main">
