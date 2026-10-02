@@ -922,3 +922,7 @@ a.back:hover { color:var(--gold-light); }
     white-space: normal; overflow-wrap: anywhere; line-height: 1.15;
   }
 }
+
+/* Logo rasmi Zentra (mark SVG). Menggantikan .mark placeholder (petak gradien). */
+.sidebar .brand .brand-mark{width:30px;height:30px;flex:0 0 auto;display:block}
+.sidebar-collapsed .sidebar .brand .brand-mark{width:32px;height:32px}
