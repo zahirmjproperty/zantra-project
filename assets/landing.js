@@ -32,8 +32,37 @@ const stages=[
 const tabs=document.querySelector('.workflow-grid');
 stages.forEach((s,i)=>{const b=document.createElement('button');b.id='stage-'+i;b.className='stage glow-frame';b.role='tab';b.setAttribute('aria-controls','workflow-detail');b.innerHTML='<span class="symbol">'+(ICONS[s[0]]||'')+'</span><b>'+s[0]+'</b><small>'+s[2]+'</small>';b.addEventListener('click',()=>select(i));b.addEventListener('keydown',e=>{let j=i;if(['ArrowRight','ArrowDown'].includes(e.key))j=(i+1)%7;else if(['ArrowLeft','ArrowUp'].includes(e.key))j=(i+6)%7;else if(e.key==='Home')j=0;else if(e.key==='End')j=6;else return;e.preventDefault();select(j);tabs.children[j].focus()});tabs.append(b)});
 function select(i){const s=stages[i];[...tabs.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});const p=document.querySelector('#workflow-detail');p.setAttribute('aria-labelledby','stage-'+i);p.innerHTML='<div><span class="badge">'+(s[5]||'Designed scope')+'</span><h3>'+s[0]+'</h3><p>'+s[3]+'</p></div><div class="tags">'+s[4].map(t=>'<span>'+t+'</span>').join('')+'</div>'}select(0);
-const projectData=[['XME Business Park 2','industrial','59 factory units · real availability',config.xmeUrl],['Pusat Perindustrian Budiman','industrial','Project microsite',config.budimanUrl],['Avalon Cybersouth','residential'],['Setia Seraya P15','residential'],['Allamanda Saujana KLIA','residential'],['Senna Presint 12','residential'],['Astana Residence P8','residential'],['Terra Residences','residential']];
-const grid=document.querySelector('.project-grid');projectData.forEach(([name,type,subtitle,url])=>{const card=document.createElement('article');card.className='project-card';card.dataset.type=type;const category=document.createElement('span');category.className='eyebrow';category.textContent=type.toUpperCase();const h=document.createElement('h3');h.textContent=name;const p=document.createElement('p');p.textContent=subtitle||'Registered project';card.append(category,h,p);const safe=url&&trustedWebUrl(url);if(safe){const a=document.createElement('a');a.href=safe;a.textContent='Visit Project Microsite';card.append(a)}if(name==='XME Business Park 2'){const l=document.createElement('a');l.href='project.html?p=xme-business-park-2';l.textContent='Project page';card.append(l)}if(name==='Pusat Perindustrian Budiman'){const l=document.createElement('a');l.href='project.html?p=budiman-semenyih';l.textContent='Project page';card.append(l)}grid.append(card)});
+const projectData=[
+['XME Business Park 2','industrial','59 industrial units · Phase 3B','xme-business-park-2',config.xmeUrl],
+['Pusat Perindustrian Budiman','industrial','15 industrial units · Semenyih','budiman-semenyih',config.budimanUrl],
+['Avalon Cybersouth','residential','Registered project','avalon-cybersouth',''],
+['Setia Seraya P15','residential','Registered project','setia-seraya-p15',''],
+['Allamanda Saujana KLIA','residential','Registered project','allamanda-saujana-klia',''],
+['Senna Presint 12','residential','Registered project','senna-presint-12',''],
+['Astana Residence P8','residential','Registered project','astana-residence-p8',''],
+['Terra Residences','residential','Registered project','terra-residences','']
+];
+const grid=document.querySelector('.project-grid');projectData.forEach(([name,type,subtitle,slug,url])=>{
+  const card=document.createElement('article');card.className='project-card';card.dataset.type=type;
+  const figure=document.createElement('div');figure.className='pc-media';
+  const img=document.createElement('img');
+  img.src='assets/img/projects/'+slug+'.webp';
+  img.alt=name+' — illustrative development render';
+  img.loading='lazy';img.width=800;img.height=500;
+  figure.append(img);
+  const body=document.createElement('div');body.className='pc-body';
+  const category=document.createElement('span');category.className='eyebrow';category.textContent=type.toUpperCase();
+  const h=document.createElement('h3');h.textContent=name;
+  const p=document.createElement('p');p.textContent=subtitle||'Registered project';
+  body.append(category,h,p);
+  const safe=url&&trustedWebUrl(url);
+  if(safe){const a=document.createElement('a');a.className='pc-link';a.href=safe;a.textContent='Visit Project Microsite';body.append(a)}
+  if(name==='XME Business Park 2'){const l=document.createElement('a');l.className='pc-link';l.href='project.html?p=xme-business-park-2';l.textContent='Project page';body.append(l)}
+  if(name==='Pusat Perindustrian Budiman'){const l=document.createElement('a');l.className='pc-link';l.href='project.html?p=budiman-semenyih';l.textContent='Project page';body.append(l)}
+  const arrow=document.createElement('span');arrow.className='pc-arrow';arrow.setAttribute('aria-hidden','true');
+  arrow.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>';
+  card.append(figure,body,arrow);
+  grid.append(card)});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(a=>a.setAttribute('aria-pressed',a===b));let count=0;grid.querySelectorAll('article').forEach(c=>{c.hidden=b.dataset.filter!=='all'&&c.dataset.type!==b.dataset.filter;if(!c.hidden)count++});document.querySelector('#project-count').textContent=count+' projects shown'}));
 const menu=document.querySelector('#menu'),nav=document.querySelector('#navigation');function closeMenu(){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');nav.classList.remove('open')}
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');nav.classList.toggle('open',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
