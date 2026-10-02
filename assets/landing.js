@@ -1,9 +1,24 @@
 'use strict';
 const config=window.ZENTRA_CONFIG||{};
 function trustedWebUrl(value){try{const u=new URL(value,location.href);return u.protocol==='https:'||u.origin===location.origin?u.href:null}catch{return null}}
-const loginUrl=config.loginUrl&&trustedWebUrl(config.loginUrl);
+/* Sign-in is wired to the family route only when the deployment actually
+   provides it. Until then the UI states the gap: no navigation, no 404,
+   no fabricated session. */
+const loginUrl=config.loginStatus==='ready'&&config.loginUrl?trustedWebUrl(config.loginUrl):null;
 const dialog=document.querySelector('#login-unavailable');
-document.querySelectorAll('[data-login]').forEach(a=>{if(loginUrl){a.href=loginUrl}else{a.href='#';a.addEventListener('click',e=>{e.preventDefault();dialog.showModal()})}});
+if(config.identityUrl&&dialog){
+  const note=dialog.querySelector('[data-identity-note]');
+  if(note){
+    const a=document.createElement('a');
+    a.href=config.identityUrl;a.textContent='ZENTRA-id identity service';
+    note.textContent='The identity service is live: ';
+    note.append(a);note.append(document.createTextNode('. A client for this system is not registered yet.'));
+  }
+}
+document.querySelectorAll('[data-login]').forEach(a=>{
+  if(loginUrl){a.href=loginUrl}
+  else{a.href='#';a.addEventListener('click',e=>{e.preventDefault();dialog.showModal()})}
+});
 document.querySelector('#close-login').addEventListener('click',()=>dialog.close());
 const ICONS={"Publish":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>',"Capture":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',"Hold":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>',"Sell":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M3 11h18M7 15h3"/><path d="M8 7V4h8v3"/></svg>',"Bill":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>',"Pay":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>',"Assure":'<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8.2-8 9.5C7.5 20.2 4 17 4 12V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>'};
 const stages=[
